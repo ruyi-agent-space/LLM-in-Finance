@@ -1,0 +1,316 @@
+{
+  "audit_id": "llm-finance-economics-v3-qa",
+  "generated_on": "2026-11-09",
+  "counts": {
+    "nodes": 108,
+    "foundation_nodes": 37,
+    "function_nodes": 51,
+    "task_nodes": 20,
+    "edges": 411,
+    "edges_by_type": {
+      "requires": 271,
+      "optional_support": 97,
+      "precedes": 17,
+      "feedback_to": 10,
+      "risk_propagates": 16
+    },
+    "cross_layer_edges": 279,
+    "source_backed_edges": 9,
+    "context_only_edges": 157,
+    "derived_edges": 77,
+    "hypothesis_edges": 168,
+    "source_backed_edge_ratio": 0.022,
+    "evidence_covered_edge_ratio": 0.404,
+    "source_backed_nodes": 41,
+    "hypothesis_nodes": 67,
+    "orphan_nodes": 0,
+    "self_loops": 0,
+    "coverage_stats": {
+      "stage": {
+        "observed": 9,
+        "denominator": 9,
+        "values": [
+          "act",
+          "decide",
+          "diagnose",
+          "feedback",
+          "govern",
+          "observe",
+          "predict",
+          "settle",
+          "understand"
+        ]
+      },
+      "domain": {
+        "observed": 13,
+        "denominator": 13,
+        "values": [
+          "accounting",
+          "compliance",
+          "data",
+          "documents",
+          "evaluation",
+          "evidence",
+          "execution",
+          "forecasting",
+          "governance",
+          "inference_runtime",
+          "learning",
+          "macro",
+          "market_making",
+          "microstructure",
+          "model_input",
+          "policy",
+          "portfolio",
+          "post_trade",
+          "privacy",
+          "reporting",
+          "research",
+          "risk",
+          "sandbox",
+          "settlement",
+          "simulation",
+          "state",
+          "strategy",
+          "valuation"
+        ]
+      },
+      "asset_class": {
+        "observed": 9,
+        "denominator": 9,
+        "values": [
+          "commodity",
+          "credit",
+          "cross_asset",
+          "crypto",
+          "derivative",
+          "equity",
+          "fx",
+          "macro",
+          "rates"
+        ]
+      },
+      "function_group": {
+        "observed": 6,
+        "denominator": 6,
+        "values": [
+          "action",
+          "analytics",
+          "controls_governance",
+          "data_knowledge",
+          "decision",
+          "simulation_learning"
+        ]
+      },
+      "orphan": {
+        "count": 0,
+        "ratio": 0.0
+      },
+      "two_hop_task_reachability": {
+        "reachable": 88,
+        "denominator": 88,
+        "ratio": 1.0,
+        "caveat": "Reachability reflects graph density and edge typing, not empirical validity."
+      },
+      "scorecard_denominators": {
+        "core_12_domain": {
+          "covered": 2,
+          "partial": 7,
+          "missing": 3,
+          "denominator": 12
+        },
+        "broader_ontology": {
+          "covered": 1,
+          "partial": 5,
+          "missing": 17,
+          "denominator": 23
+        },
+        "note": "These are distinct audit scorecards; do not compare their bucket counts as one denominator."
+      }
+    }
+  },
+  "edge_evidence": {
+    "derived": 77,
+    "source_backed": 9,
+    "hypothesis": 168,
+    "context_only": 157
+  },
+  "node_evidence": {
+    "source_backed": 41,
+    "hypothesis": 67
+  },
+  "residual_gaps": {
+    "covered": 4,
+    "partial": 3
+  },
+  "core_challenges": [
+    {
+      "node_id": "FND-AUDIT",
+      "title": "Audit/provenance log",
+      "layer": "L1_foundation",
+      "group": "governance",
+      "centrality_proxy": 0.84,
+      "cross_layer_degree": 17,
+      "criticality": "high",
+      "evidence_coverage": "specific_source"
+    },
+    {
+      "node_id": "FN-RISK",
+      "title": "Risk decomposition, VaR/ES and limits",
+      "layer": "L2_function",
+      "group": "analytics",
+      "centrality_proxy": 0.821,
+      "cross_layer_degree": 13,
+      "criticality": "high",
+      "evidence_coverage": "context_only"
+    },
+    {
+      "node_id": "FN-FORECAST",
+      "title": "Forecast and nowcast with calibration",
+      "layer": "L2_function",
+      "group": "analytics",
+      "centrality_proxy": 0.801,
+      "cross_layer_degree": 13,
+      "criticality": "high",
+      "evidence_coverage": "mixed_context_and_specific"
+    },
+    {
+      "node_id": "FN-EVIDENCE",
+      "title": "Evidence retrieval, authority and citation",
+      "layer": "L2_function",
+      "group": "data_knowledge",
+      "centrality_proxy": 0.722,
+      "cross_layer_degree": 11,
+      "criticality": "high",
+      "evidence_coverage": "project_note"
+    },
+    {
+      "node_id": "PORT-REBALANCE",
+      "title": "Rebalance an approved portfolio",
+      "layer": "L3_task",
+      "group": "domain_task",
+      "centrality_proxy": 0.698,
+      "cross_layer_degree": 8,
+      "criticality": "high",
+      "evidence_coverage": "context_only"
+    },
+    {
+      "node_id": "FN-DOC-PDF",
+      "title": "Financial document/PDF QA",
+      "layer": "L2_function",
+      "group": "data_knowledge",
+      "centrality_proxy": 0.67,
+      "cross_layer_degree": 10,
+      "criticality": "high",
+      "evidence_coverage": "project_note"
+    },
+    {
+      "node_id": "GOV-MRM",
+      "title": "Run model-risk governance review",
+      "layer": "L3_task",
+      "group": "domain_task",
+      "centrality_proxy": 0.667,
+      "cross_layer_degree": 10,
+      "criticality": "high",
+      "evidence_coverage": "specific_source"
+    },
+    {
+      "node_id": "FN-GOV",
+      "title": "Model risk governance and reproducibility",
+      "layer": "L2_function",
+      "group": "controls_governance",
+      "centrality_proxy": 0.662,
+      "cross_layer_degree": 11,
+      "criticality": "high",
+      "evidence_coverage": "specific_source"
+    },
+    {
+      "node_id": "FND-EVAL",
+      "title": "Holistic/agent evaluation harness",
+      "layer": "L1_foundation",
+      "group": "evaluation",
+      "centrality_proxy": 0.656,
+      "cross_layer_degree": 12,
+      "criticality": "high",
+      "evidence_coverage": "specific_source"
+    },
+    {
+      "node_id": "FN-SERVE-BATCH",
+      "title": "Serving batching and concurrency",
+      "layer": "L2_function",
+      "group": "action",
+      "centrality_proxy": 0.637,
+      "cross_layer_degree": 10,
+      "criticality": "high",
+      "evidence_coverage": "specific_source"
+    },
+    {
+      "node_id": "FND-RAG",
+      "title": "RAG ingestion/retrieval/reranking",
+      "layer": "L1_foundation",
+      "group": "context",
+      "centrality_proxy": 0.627,
+      "cross_layer_degree": 10,
+      "criticality": "high",
+      "evidence_coverage": "project_note"
+    },
+    {
+      "node_id": "FND-VLLM",
+      "title": "vLLM KV-cache/batching/serving",
+      "layer": "L1_foundation",
+      "group": "runtime",
+      "centrality_proxy": 0.627,
+      "cross_layer_degree": 10,
+      "criticality": "high",
+      "evidence_coverage": "specific_source"
+    },
+    {
+      "node_id": "SIM-ABM",
+      "title": "Calibrate an agent-based market simulation",
+      "layer": "L3_task",
+      "group": "domain_task",
+      "centrality_proxy": 0.627,
+      "cross_layer_degree": 10,
+      "criticality": "high",
+      "evidence_coverage": "context_only"
+    },
+    {
+      "node_id": "FORECAST-NOWCAST",
+      "title": "Forecast and nowcast macro/asset variables",
+      "layer": "L3_task",
+      "group": "domain_task",
+      "centrality_proxy": 0.612,
+      "cross_layer_degree": 9,
+      "criticality": "high",
+      "evidence_coverage": "mixed_context_and_specific"
+    },
+    {
+      "node_id": "EXEC-TCA",
+      "title": "Execute and analyze transaction costs",
+      "layer": "L3_task",
+      "group": "domain_task",
+      "centrality_proxy": 0.603,
+      "cross_layer_degree": 7,
+      "criticality": "high",
+      "evidence_coverage": "context_only"
+    }
+  ],
+  "artifact_paths": [
+    "study_planner_network.json",
+    "nodes.csv",
+    "foundations.csv",
+    "capabilities.csv",
+    "tasks.csv",
+    "edges.csv",
+    "metrics.csv",
+    "gap_matrix.csv",
+    "audit_centrality.csv",
+    "audit_recommendations.csv",
+    "audit_proposed_edges.csv",
+    "audit_report.md",
+    "LLM_FINANCE_FUNCTIONALITY_AUDIT.md",
+    "README.md",
+    "MANIFEST.json"
+  ],
+  "evidence_warning": "E012 OMI homepage is context-only; finance-specific functionality mappings remain hypothesis unless separately sourced."
+}

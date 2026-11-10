@@ -1,0 +1,101 @@
+{
+  "dataset_id": "llm-finance-economics-three-layer-v3",
+  "generated_on": "2026-11-09",
+  "files": [
+    {
+      "file": "LLM_FINANCE_FUNCTIONALITY_AUDIT.md",
+      "bytes": 5345,
+      "sha256": "2e96343ccda473f9b890d29e7d646b34e36de5c3cec6cbde2424dfb804c35ae8"
+    },
+    {
+      "file": "README.md",
+      "bytes": 2252,
+      "sha256": "1dc999096f0fb807798f6dd42a78fcc37c586dfa9b2d519425914b0ea12c901a"
+    },
+    {
+      "file": "audit_centrality.csv",
+      "bytes": 19409,
+      "sha256": "7ec4216a5406898ef2431e59d1fc12e9453826e17b48f5577067ef104c3bc078"
+    },
+    {
+      "file": "audit_proposed_edges.csv",
+      "bytes": 117039,
+      "sha256": "a3b554d73be34bb2f6689c215837c4b3b0f4ab9d52fae15818f83b649b137702"
+    },
+    {
+      "file": "audit_recommendations.csv",
+      "bytes": 1611,
+      "sha256": "ba382687c81360a0fd42f567a4d2374831c46f5c5a187a2cc8d802dee8ace51c"
+    },
+    {
+      "file": "audit_report.md",
+      "bytes": 5345,
+      "sha256": "2e96343ccda473f9b890d29e7d646b34e36de5c3cec6cbde2424dfb804c35ae8"
+    },
+    {
+      "file": "audit_summary.json",
+      "bytes": 8287,
+      "sha256": "3b647444f8f8207b812f6692a2c65b814525af88558a1fbefe3a8e6726bbede5"
+    },
+    {
+      "file": "capabilities.csv",
+      "bytes": 33800,
+      "sha256": "adde3ec5c7da15d835698e3c55f592b443edce99f00e33aa4c1ea69d32b0e449"
+    },
+    {
+      "file": "edges.csv",
+      "bytes": 153650,
+      "sha256": "7b730c6f33e0582032daaf8fc9c0db2ded167711df3be32cde60148ec1a68eb0"
+    },
+    {
+      "file": "evidence.csv",
+      "bytes": 6194,
+      "sha256": "f76650c6551679941623d1b540389899de8d7aff5b57e50972f36775625ef7e1"
+    },
+    {
+      "file": "foundations.csv",
+      "bytes": 21007,
+      "sha256": "8ad6c761c2cde7c0258d8e775a4c6df03e7b930e14b20c923caae3fd3d0faaed"
+    },
+    {
+      "file": "functions.csv",
+      "bytes": 33800,
+      "sha256": "adde3ec5c7da15d835698e3c55f592b443edce99f00e33aa4c1ea69d32b0e449"
+    },
+    {
+      "file": "gap_matrix.csv",
+      "bytes": 3658,
+      "sha256": "ebeecf8110e43d28956f4d1f6ad4593e46f4a476458387482d7099ad7853ec49"
+    },
+    {
+      "file": "metrics.csv",
+      "bytes": 18508,
+      "sha256": "3b132a67bd74ce6d613f9c77489af502d1109680a078edd0bd442b9112947db3"
+    },
+    {
+      "file": "nodes.csv",
+      "bytes": 67566,
+      "sha256": "dedf02ad76cc98fa54b5b59faef8d29ac72801f19163796b3eef82666295d908"
+    },
+    {
+      "file": "study_planner_network.json",
+      "bytes": 953199,
+      "sha256": "dc10055aec41a58d5d75acdd8ee96ac943bca416d50c27223ae1489e2944bced"
+    },
+    {
+      "file": "study_planner_network.xlsx",
+      "bytes": 151676,
+      "sha256": "1fd71dec50e77fe8f19debac8763fe50843a2a5174678564edb0e952bc22a098"
+    },
+    {
+      "file": "tasks.csv",
+      "bytes": 13831,
+      "sha256": "defff6cb9cdc9a8f66facb1c2fb5eb960e6b09d90f024b9372937e3d29de02f7"
+    },
+    {
+      "file": "technologies.csv",
+      "bytes": 21007,
+      "sha256": "8ad6c761c2cde7c0258d8e775a4c6df03e7b930e14b20c923caae3fd3d0faaed"
+    }
+  ]
+}

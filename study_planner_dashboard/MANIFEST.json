@@ -1,0 +1,37 @@
+{
+  "dataset_id": "llm-finance-economics-three-layer-v3",
+  "version": "3.0.0",
+  "generated_on": "2026-11-09",
+  "files": [
+    {
+      "file": "README.md",
+      "bytes": 2063,
+      "sha256": "f9b8d95b796cbacbd314203c1b1288d21e6bed2aa86fe1204b9e4dea2e71f59f"
+    },
+    {
+      "file": "LLM_FINANCE_FUNCTIONALITY_AUDIT.md",
+      "bytes": 5345,
+      "sha256": "2e96343ccda473f9b890d29e7d646b34e36de5c3cec6cbde2424dfb804c35ae8"
+    },
+    {
+      "file": "app.js",
+      "bytes": 45646,
+      "sha256": "cd289a2c0c75e4e66a0ce60e27dba68edf63a409bb18cb86173161b7875e69f9"
+    },
+    {
+      "file": "data.js",
+      "bytes": 712025,
+      "sha256": "78171abab3b09ffceaffacbb228000b56b7f78466757b0488c40d2d2204cacb8"
+    },
+    {
+      "file": "index.html",
+      "bytes": 5306,
+      "sha256": "71d693051963911af18224cdb1491b5d6a3f891c11c1905c228929fccc081ab2"
+    },
+    {
+      "file": "styles.css",
+      "bytes": 19048,
+      "sha256": "716c5fb26a810babf088e0d0be3d81ff7a31c8e8ff98c0a18e7ab88aedce08b9"
+    }
+  ]
+}

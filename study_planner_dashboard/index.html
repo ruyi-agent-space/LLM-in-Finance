@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>LLM in Finance-Economics Functionality Network</title>
+  <meta name="description" content="Public functionality network for LLMs in finance-economics: capability coverage, technical support completeness, critical challenges, centrality and evidence." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <div class="brand-lockup">
+        <div class="brand-mark" aria-hidden="true">✦</div>
+        <div>
+          <div class="eyebrow">LLM IN FINANCE-ECONOMICS</div>
+          <h1>Functionality Network</h1>
+        </div>
+      </div>
+      <div class="topbar-actions">
+        <span class="privacy-pill"><span class="dot"></span> PUBLIC · GITHUB PAGES</span>
+        <button class="ghost-btn" id="exportBtn" type="button">Export view</button>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="kicker">Finance-economics functionality × LLM / agentic technology</p>
+          <h2>Map what an LLM can do, what supports it, and where it breaks.</h2>
+          <p class="hero-lede">Trace functional coverage from foundation technology through reusable capabilities to workflow / asset tasks. Inspect technical support completeness, cross-layer centrality, challenge propagation and evidence before treating a mapping as established.</p>
+          <div class="evidence-legend" aria-label="Evidence status legend">
+            <span class="legend-item"><i class="swatch fact"></i> Evidence-backed</span>
+            <span class="legend-item"><i class="swatch hypothesis"></i> Hypothesis / needs validation</span>
+            <span class="legend-item"><i class="swatch seeded"></i> Seeded / derived</span>
+          </div>
+        </div>
+        <div class="hero-callout">
+          <span class="callout-label">Network objective</span>
+          <strong>coverage → support → challenge → evidence</strong>
+          <span class="callout-note">A = foundations · B = behavior · C = controls &amp; learning</span>
+        </div>
+      </section>
+
+      <section class="stat-grid" id="statGrid" aria-label="Dataset summary"></section>
+
+      <section class="filter-bar" aria-label="Network filters">
+        <div class="filter-heading"><span class="filter-icon">⌕</span><span>Slice the functionality network</span><button class="text-btn" id="clearFilters" type="button">Reset</button></div>
+        <label>Layer<select id="layerFilter"></select></label>
+        <label>Domain<select id="domainFilter"></select></label>
+        <label>Asset class<select id="assetFilter"></select></label>
+        <label>Workflow stage<select id="stageFilter"></select></label>
+        <label>Edge type<select id="edgeFilter"></select></label>
+        <label class="range-label">Min confidence <span id="confidenceValue">0.00</span><input id="confidenceFilter" type="range" min="0" max="1" step="0.05" value="0" /></label>
+        <label>Evidence coverage<select id="evidenceFilter"></select></label>
+        <label>Criticality<select id="criticalityFilter"></select></label>
+        <label>Risk<select id="riskFilter"><option value="all">All risk levels</option><option value="high">High / material risk</option><option value="low">Lower / unspecified</option></select></label>
+        <label>Status<select id="statusFilter"></select></label>
+      </section>
+
+      <nav class="view-tabs" aria-label="Network views">
+        <button class="tab is-active" data-view="overview" type="button"><span>01</span> Layered functionality</button>
+        <button class="tab" data-view="task" type="button"><span>02</span> Functionality lens</button>
+        <button class="tab" data-view="technology" type="button"><span>03</span> Technical support</button>
+        <button class="tab" data-view="bottleneck" type="button"><span>04</span> Critical challenges</button>
+        <button class="tab" data-view="gaps" type="button"><span>05</span> Coverage gaps</button>
+        <button class="tab" data-view="pathway" type="button"><span>06</span> Lifecycle chain</button>
+      </nav>
+
+      <section id="view-overview" class="view-panel is-active"></section>
+      <section id="view-task" class="view-panel"></section>
+      <section id="view-technology" class="view-panel"></section>
+      <section id="view-bottleneck" class="view-panel"></section>
+      <section id="view-gaps" class="view-panel"></section>
+      <section id="view-pathway" class="view-panel"></section>
+    </main>
+
+    <footer class="footer">
+      <div><strong>LLM in Finance-Economics Functionality Network</strong><span id="datasetStamp"></span></div>
+      <div>Evidence is linked where available. OMI / financial mappings are hypotheses until a specific source is attached.</div>
+    </footer>
+  </div>
+  <aside class="detail-drawer" id="detailDrawer" aria-hidden="true">
+    <button class="drawer-close" id="drawerClose" aria-label="Close detail">×</button>
+    <div id="drawerContent"></div>
+  </aside>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

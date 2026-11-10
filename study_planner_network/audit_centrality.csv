@@ -1,0 +1,109 @@
+node_id,title,layer,group,raw_degree,in_degree,out_degree,cross_layer_degree,downstream_task_reach,risk_degree,feedback_degree,centrality_proxy,is_core,criticality,evidence_coverage,note
+FND-AUDIT,Audit/provenance log,L1_foundation,governance,19,1,18,17,20,1,0,0.84,True,high,specific_source,Foundation density is not validity; verify domain metrics.
+FN-RISK,"Risk decomposition, VaR/ES and limits",L2_function,analytics,20,7,13,13,16,1,2,0.821,True,high,context_only,Foundation density is not validity; verify domain metrics.
+FN-FORECAST,Forecast and nowcast with calibration,L2_function,analytics,18,8,10,13,16,1,2,0.801,True,high,mixed_context_and_specific,Foundation density is not validity; verify domain metrics.
+FN-EVIDENCE,"Evidence retrieval, authority and citation",L2_function,data_knowledge,16,4,12,11,20,1,0,0.722,True,high,project_note,Foundation density is not validity; verify domain metrics.
+PORT-REBALANCE,Rebalance an approved portfolio,L3_task,domain_task,10,7,3,8,16,2,2,0.698,True,high,context_only,Foundation density is not validity; verify domain metrics.
+FN-DOC-PDF,Financial document/PDF QA,L2_function,data_knowledge,14,7,7,10,19,1,0,0.67,True,high,project_note,Foundation density is not validity; verify domain metrics.
+GOV-MRM,Run model-risk governance review,L3_task,domain_task,9,7,2,10,16,1,2,0.667,True,high,specific_source,Foundation density is not validity; verify domain metrics.
+FN-GOV,Model risk governance and reproducibility,L2_function,controls_governance,12,7,5,11,16,1,1,0.662,True,high,specific_source,Foundation density is not validity; verify domain metrics.
+FND-EVAL,Holistic/agent evaluation harness,L1_foundation,evaluation,13,1,12,12,20,0,0,0.656,True,high,specific_source,Foundation density is not validity; verify domain metrics.
+FN-SERVE-BATCH,Serving batching and concurrency,L2_function,action,14,8,6,10,20,0,0,0.637,True,high,specific_source,Foundation density is not validity; verify domain metrics.
+FND-RAG,RAG ingestion/retrieval/reranking,L1_foundation,context,13,1,12,10,20,0,0,0.627,True,high,project_note,Foundation density is not validity; verify domain metrics.
+FND-VLLM,vLLM KV-cache/batching/serving,L1_foundation,runtime,13,3,10,10,20,0,0,0.627,True,high,specific_source,Foundation density is not validity; verify domain metrics.
+SIM-ABM,Calibrate an agent-based market simulation,L3_task,domain_task,10,8,2,10,16,1,1,0.627,True,high,context_only,Foundation density is not validity; verify domain metrics.
+FORECAST-NOWCAST,Forecast and nowcast macro/asset variables,L3_task,domain_task,10,8,2,9,16,2,0,0.612,True,high,mixed_context_and_specific,Foundation density is not validity; verify domain metrics.
+EXEC-TCA,Execute and analyze transaction costs,L3_task,domain_task,7,5,2,7,16,2,1,0.603,True,high,context_only,Foundation density is not validity; verify domain metrics.
+FND-TRANSFORMER,Transformer / decoder LLM,L1_foundation,model,16,0,16,5,20,0,0,0.584,False,high,specific_source,Foundation density is not validity; verify domain metrics.
+SETTLE-RECON,Reconcile settlement and positions,L3_task,domain_task,6,4,2,6,16,1,2,0.578,False,high,context_only,Foundation density is not validity; verify domain metrics.
+FN-OMS,Order management and intent validation,L2_function,action,12,5,7,8,16,1,0,0.568,False,high,mixed_context_and_specific,Foundation density is not validity; verify domain metrics.
+FN-MICRO,LOB and market microstructure modeling,L2_function,analytics,13,5,8,7,16,0,1,0.563,False,high,context_only,Foundation density is not validity; verify domain metrics.
+FN-DATA-PIT,Point-in-time data and feature governance,L2_function,data_knowledge,7,4,3,6,17,2,0,0.556,False,high,context_only,Foundation density is not validity; verify domain metrics.
+FND-RUNTIME,Agent runtime/orchestrator,L1_foundation,runtime,12,2,10,5,20,0,0,0.544,False,high,project_note,Foundation density is not validity; verify domain metrics.
+FN-TCA,Transaction-cost and adverse-selection analysis,L2_function,analytics,7,5,2,6,16,1,1,0.538,False,high,context_only,Foundation density is not validity; verify domain metrics.
+RISK-STRESS,"Run VaR/ES, limits and stress tests",L3_task,domain_task,7,5,2,6,16,1,1,0.538,False,high,context_only,Foundation density is not validity; verify domain metrics.
+FN-ACCOUNTING,Accounting/statement reconciliation,L2_function,data_knowledge,11,4,7,6,19,0,0,0.531,False,high,context_only,Foundation density is not validity; verify domain metrics.
+FND-TIMESERIES,As-of time-series/event store,L1_foundation,finance_substrate,7,1,6,4,20,1,0,0.529,False,high,context_only,Foundation density is not validity; verify domain metrics.
+FN-RAG-RETRIEVE,Hybrid retrieval and reranking,L2_function,data_knowledge,9,5,4,6,20,0,0,0.528,False,high,project_note,Foundation density is not validity; verify domain metrics.
+COMPLY-SURVEILLANCE,Run market-abuse and conduct surveillance,L3_task,domain_task,6,4,2,6,16,1,1,0.528,False,high,context_only,Foundation density is not validity; verify domain metrics.
+FND-SANDBOX,Code/data sandbox,L1_foundation,runtime,11,1,10,4,20,0,0,0.519,False,high,project_note,Foundation density is not validity; verify domain metrics.
+FN-RAG-CITE,Citation and entailment checking,L2_function,data_knowledge,8,4,4,6,20,0,0,0.518,False,high,project_note,Foundation density is not validity; verify domain metrics.
+FND-MEMORY,Session/persistent memory and checkpoints,L1_foundation,context,8,1,7,6,20,0,0,0.518,False,medium,project_note,Foundation density is not validity; verify domain metrics.
+FND-GUARDRAIL,Policy guardrails/allow lists,L1_foundation,controls,9,2,7,5,20,0,0,0.514,False,high,project_note,Foundation density is not validity; verify domain metrics.
+FND-TRACE,Tracing/observability,L1_foundation,evaluation,9,1,8,5,20,0,0,0.514,False,high,project_note,Foundation density is not validity; verify domain metrics.
+FN-EVAL,"Robustness, regression and domain evaluation",L2_function,controls_governance,8,4,4,7,16,0,1,0.513,False,high,specific_source,Foundation density is not validity; verify domain metrics.
+FND-EMBED,Embeddings/vector/hybrid index,L1_foundation,context,7,0,7,6,20,0,0,0.508,False,high,project_note,Foundation density is not validity; verify domain metrics.
+FN-TABLE-CHART,Table and chart QA,L2_function,data_knowledge,7,4,3,6,20,0,0,0.508,False,high,project_note,Foundation density is not validity; verify domain metrics.
+FN-ABM,Calibrated agent-based market simulation,L2_function,simulation_learning,9,6,3,6,16,1,0,0.508,False,high,context_only,Foundation density is not validity; verify domain metrics.
+FN-COMPLY,Compliance and regulatory reporting,L2_function,controls_governance,7,4,3,6,17,1,0,0.506,False,high,context_only,Foundation density is not validity; verify domain metrics.
+FN-INCIDENT,Incident response and model/card escalation,L2_function,controls_governance,7,5,2,7,16,0,1,0.503,False,high,project_note,Foundation density is not validity; verify domain metrics.
+FN-OBS,Observability and provenance,L2_function,controls_governance,7,3,4,7,16,1,0,0.503,False,high,specific_source,Foundation density is not validity; verify domain metrics.
+FN-FIN-NLP,Financial NER/event/sentiment extraction,L2_function,data_knowledge,11,5,6,5,18,0,0,0.499,False,high,context_only,Foundation density is not validity; verify domain metrics.
+FN-PORT,Portfolio construction and rebalance,L2_function,decision,9,6,3,5,16,0,1,0.494,False,high,context_only,Foundation density is not validity; verify domain metrics.
+FN-STATE,Market/economic state representation,L2_function,data_knowledge,12,4,8,5,17,0,0,0.491,False,high,context_only,Foundation density is not validity; verify domain metrics.
+FN-RAG-INGEST,RAG ingestion and chunking,L2_function,data_knowledge,6,3,3,5,20,0,0,0.484,False,high,project_note,Foundation density is not validity; verify domain metrics.
+FN-RAG-ACL,Evidence ACL and freshness controls,L2_function,controls_governance,6,3,3,5,20,0,0,0.484,False,high,project_note,Foundation density is not validity; verify domain metrics.
+FN-APPROVAL,Human approval and decision boundary,L2_function,controls_governance,6,3,3,6,16,1,0,0.478,False,high,project_note,Foundation density is not validity; verify domain metrics.
+KYC-AML-REPORT,Screen KYC/AML and report cases,L3_task,domain_task,6,5,1,5,16,1,0,0.464,False,high,context_only,Foundation density is not validity; verify domain metrics.
+PORT-CONSTRUCT,Construct a constrained portfolio,L3_task,domain_task,9,8,1,6,16,0,0,0.458,False,high,context_only,Foundation density is not validity; verify domain metrics.
+FND-MODELREG,Model registry/reproducibility/change control,L1_foundation,governance,6,2,4,4,19,0,0,0.451,False,high,specific_source,Foundation density is not validity; verify domain metrics.
+FND-TOOLS,Typed tool/function calling,L1_foundation,tools,7,1,6,2,20,0,0,0.449,False,high,specific_source,Foundation density is not validity; verify domain metrics.
+FN-SETTLE,Settlement and post-trade reconciliation,L2_function,action,6,5,1,4,16,1,0,0.449,False,high,context_only,Foundation density is not validity; verify domain metrics.
+FN-RAG-INDEX,Embedding/vector index build,L2_function,data_knowledge,5,4,1,3,20,0,0,0.444,False,high,project_note,Foundation density is not validity; verify domain metrics.
+FND-TRAIN-SCALING,Compute/data scaling and pretraining laws,L1_foundation,training,5,1,4,3,20,0,0,0.444,False,medium,specific_source,Foundation density is not validity; verify domain metrics.
+FND-PRIVACY,PII/privacy and secure-execution layer,L1_foundation,controls,5,2,3,3,17,1,0,0.442,False,high,project_note,Foundation density is not validity; verify domain metrics.
+FN-CAUSAL,Central-bank/macro causal analysis,L2_function,analytics,8,4,4,4,17,0,0,0.436,False,high,context_only,Foundation density is not validity; verify domain metrics.
+FND-COMPLIANCE,Compliance/market-surveillance rules engine,L1_foundation,controls,6,2,4,4,18,0,0,0.434,False,high,context_only,Foundation density is not validity; verify domain metrics.
+FN-EXEC,Execution routing and fill management,L2_function,action,6,4,2,3,16,1,0,0.434,False,high,context_only,Foundation density is not validity; verify domain metrics.
+FN-RL,Constrained RL policy learning,L2_function,simulation_learning,8,6,2,5,16,0,0,0.434,False,high,mixed_context_and_specific,Foundation density is not validity; verify domain metrics.
+FN-REPORT,Financial/regulatory reporting,L2_function,controls_governance,6,4,2,4,18,0,0,0.434,False,high,context_only,Foundation density is not validity; verify domain metrics.
+FN-ATTENTION-KV,Attention and KV-cache management,L2_function,action,6,4,2,4,18,0,0,0.434,False,medium,specific_source,Foundation density is not validity; verify domain metrics.
+FN-SERVE-STREAM,Streaming and speculative serving,L2_function,action,4,3,1,3,20,0,0,0.434,False,medium,specific_source,Foundation density is not validity; verify domain metrics.
+FND-ECONOMETRIC,Econometrics/causal inference stack,L1_foundation,finance_substrate,6,1,5,5,17,0,0,0.431,False,high,context_only,Foundation density is not validity; verify domain metrics.
+FND-RISK,"Risk, valuation and stress engine",L1_foundation,finance_substrate,7,1,6,5,16,0,0,0.424,False,high,context_only,Foundation density is not validity; verify domain metrics.
+FN-SCENARIO,Scenario generation and counterfactuals,L2_function,simulation_learning,8,5,3,4,16,0,0,0.419,False,high,context_only,Foundation density is not validity; verify domain metrics.
+FND-QUANT,Quantization and mixed precision,L1_foundation,inference,4,1,3,2,20,0,0,0.419,False,medium,specific_source,Foundation density is not validity; verify domain metrics.
+FND-FEATURE,Point-in-time feature store,L1_foundation,finance_substrate,6,2,4,4,17,0,0,0.416,False,high,context_only,Foundation density is not validity; verify domain metrics.
+FN-STRESS,"Stress, scenarios and hedge effectiveness",L2_function,analytics,6,4,2,5,16,0,0,0.414,False,high,context_only,Foundation density is not validity; verify domain metrics.
+FN-STRATEGY,Strategy planning and routing,L2_function,decision,6,4,2,5,16,0,0,0.414,False,high,specific_source,Foundation density is not validity; verify domain metrics.
+FN-RL-PPO-GRPO,PPO/GRPO policy optimization recipe,L2_function,simulation_learning,6,5,1,5,16,0,0,0.414,False,high,specific_source,Foundation density is not validity; verify domain metrics.
+FND-VLM,Multimodal vision-language model,L1_foundation,model,3,1,2,2,20,0,0,0.409,False,high,project_note,Foundation density is not validity; verify domain metrics.
+FND-OMS,Order-management system substrate,L1_foundation,finance_substrate,7,2,5,4,16,0,0,0.409,False,high,context_only,Foundation density is not validity; verify domain metrics.
+FND-SPECULATIVE,Speculative decoding,L1_foundation,inference,3,1,2,2,20,0,0,0.409,False,low,specific_source,Foundation density is not validity; verify domain metrics.
+FN-SERVE-QUANT,Serving quantization and memory policy,L2_function,action,3,2,1,2,20,0,0,0.409,False,medium,specific_source,Foundation density is not validity; verify domain metrics.
+FN-KYCAML,KYC/AML identity and transaction screening,L2_function,controls_governance,5,4,1,4,17,0,0,0.406,False,high,context_only,Foundation density is not validity; verify domain metrics.
+FND-PLANNER,ReAct/planning controller,L1_foundation,planning,4,1,3,1,20,0,0,0.405,False,high,specific_source,Foundation density is not validity; verify domain metrics.
+FN-ATTRIB,Portfolio performance attribution,L2_function,analytics,6,4,2,4,16,0,0,0.399,False,medium,context_only,Foundation density is not validity; verify domain metrics.
+FN-TOKENIZE,Tokenization and context packing,L2_function,data_knowledge,4,2,2,3,18,0,0,0.399,False,medium,specific_source,Foundation density is not validity; verify domain metrics.
+FN-RL-DPO,Direct preference optimization recipe,L2_function,simulation_learning,6,4,2,4,16,0,0,0.399,False,medium,specific_source,Foundation density is not validity; verify domain metrics.
+FN-PRIVACY,"Privacy, PII redaction and access control",L2_function,controls_governance,4,3,1,4,17,0,0,0.396,False,high,project_note,Foundation density is not validity; verify domain metrics.
+FND-ATTENTION,FlashAttention / IO-aware attention,L1_foundation,inference,3,1,2,1,20,0,0,0.395,False,medium,specific_source,Foundation density is not validity; verify domain metrics.
+FND-RL,Policy/RL optimization (PPO/GRPO/DPO),L1_foundation,learning,5,1,4,4,16,0,0,0.389,False,high,specific_source,Foundation density is not validity; verify domain metrics.
+FN-RL-SFT,Supervised fine-tuning recipe,L2_function,simulation_learning,5,3,2,4,16,0,0,0.389,False,medium,specific_source,Foundation density is not validity; verify domain metrics.
+FND-DISTRIBUTED,Distributed data/model/expert parallelism,L1_foundation,training,2,1,1,1,20,0,0,0.385,False,medium,specific_source,Foundation density is not validity; verify domain metrics.
+FND-MOE,Sparse mixture-of-experts routing,L1_foundation,model,2,1,1,1,20,0,0,0.385,False,medium,specific_source,Foundation density is not validity; verify domain metrics.
+FND-MCP,MCP tool/resource protocol,L1_foundation,tools,2,1,1,1,20,0,0,0.385,False,medium,specific_source,Foundation density is not validity; verify domain metrics.
+FN-SURVEILLANCE,Market-abuse and conduct surveillance,L2_function,controls_governance,6,5,1,3,16,0,0,0.384,False,high,context_only,Foundation density is not validity; verify domain metrics.
+FND-HITL,Human approval gate,L1_foundation,controls,5,1,4,3,16,0,0,0.374,False,high,project_note,Foundation density is not validity; verify domain metrics.
+FND-LONGCTX,RoPE and long-context mechanisms,L1_foundation,model,3,1,2,2,18,0,0,0.374,False,medium,specific_source,Foundation density is not validity; verify domain metrics.
+FND-OPTIMIZER,Optimization and solver engine,L1_foundation,finance_substrate,4,1,3,3,16,0,0,0.364,False,high,context_only,Foundation density is not validity; verify domain metrics.
+FND-BACKTEST,Walk-forward backtest/TCA engine,L1_foundation,finance_substrate,5,3,2,2,16,0,0,0.359,False,high,context_only,Foundation density is not validity; verify domain metrics.
+DOC-QA-TABLE-CHART,Answer questions over tables and charts,L3_task,domain_task,10,9,1,10,3,1,0,0.35,False,high,project_note,Foundation density is not validity; verify domain metrics.
+FND-INCIDENT,Incident response and red-team workflow,L1_foundation,governance,4,3,1,1,16,0,0,0.335,False,high,project_note,Foundation density is not validity; verify domain metrics.
+FND-VERIFIER,Plan/verifier/critic,L1_foundation,planning,2,1,1,1,16,0,0,0.315,False,high,project_note,Foundation density is not validity; verify domain metrics.
+FND-SETTLEMENT,Settlement/reconciliation substrate,L1_foundation,finance_substrate,2,1,1,1,16,0,0,0.315,False,high,context_only,Foundation density is not validity; verify domain metrics.
+DOC-QA-PDF,Answer questions over financial PDFs,L3_task,domain_task,10,9,1,10,1,1,0,0.315,False,high,project_note,Foundation density is not validity; verify domain metrics.
+FN-LONGCTX,Long-context retrieval and compression,L2_function,data_knowledge,6,4,2,5,6,0,0,0.239,False,medium,specific_source,Foundation density is not validity; verify domain metrics.
+FN-VALUATION,Asset pricing and valuation,L2_function,analytics,8,6,2,4,2,0,0,0.174,False,high,context_only,Foundation density is not validity; verify domain metrics.
+RESEARCH-DUE-DILIGENCE,Produce research due-diligence memo,L3_task,domain_task,8,8,0,6,0,0,0,0.168,False,high,context_only,Foundation density is not validity; verify domain metrics.
+ACCOUNTING-RECON,Reconcile financial statements and restatements,L3_task,domain_task,7,5,2,4,2,0,0,0.164,False,high,context_only,Foundation density is not validity; verify domain metrics.
+RESEARCH-SCREEN,Screen assets/issuers for research,L3_task,domain_task,6,5,1,5,1,0,0,0.151,False,medium,context_only,Foundation density is not validity; verify domain metrics.
+FN-SANDBOX,Paper/sandbox action execution,L2_function,action,6,5,1,4,1,0,0,0.136,False,high,context_only,Foundation density is not validity; verify domain metrics.
+MM-QUOTE,Quote and manage market-maker inventory,L3_task,domain_task,5,5,0,5,0,0,0,0.124,False,high,context_only,Foundation density is not validity; verify domain metrics.
+VALUATION-EQUITY,Value equity assets and scenarios,L3_task,domain_task,6,6,0,4,0,0,0,0.119,False,high,context_only,Foundation density is not validity; verify domain metrics.
+VALUATION-FIXED-INCOME,Price fixed-income instruments,L3_task,domain_task,5,5,0,4,0,0,0,0.109,False,high,context_only,Foundation density is not validity; verify domain metrics.
+HEDGE-EFFECTIVENESS,Evaluate hedge effectiveness,L3_task,domain_task,4,4,0,4,0,0,0,0.099,False,high,context_only,Foundation density is not validity; verify domain metrics.
+CB-COMMS,Analyze central-bank communications,L3_task,domain_task,4,4,0,4,0,0,0,0.099,False,high,context_only,Foundation density is not validity; verify domain metrics.
+FN-DILIGENCE,Research due diligence and memo,L2_function,decision,5,4,1,2,1,0,0,0.097,False,high,context_only,Foundation density is not validity; verify domain metrics.
+FN-MM,Market-making quote and inventory control,L2_function,action,5,4,1,2,1,0,0,0.097,False,high,context_only,Foundation density is not validity; verify domain metrics.
+FN-SCREEN,Research screening,L2_function,decision,4,3,1,1,2,0,0,0.09,False,medium,context_only,Foundation density is not validity; verify domain metrics.
