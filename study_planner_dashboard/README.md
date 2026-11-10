@@ -4,8 +4,8 @@ Public static dashboard built from `study_planner_network/study_planner_network.
 
 ## Canonical graph
 - 108 nodes: 37 foundation technologies (L1), 51 reusable finance functions (L2), and 20 workflow × asset-class tasks (L3).
-- 422 directed edges: 315 required, 64 optional support, 17 workflow precedence, 10 feedback, and 16 risk propagation.
-- 279 cross-layer edges; 41 source-backed nodes and 9 source-backed edges. Evidence-covered edges are 34.8%; many domain mappings intentionally remain hypotheses or context-only.
+- 411 directed edges: 271 required, 97 optional support, 17 workflow precedence, 10 feedback, and 16 risk propagation.
+- 279 cross-layer edges; 41 source-backed nodes. Evidence status: 9 source-backed edges, 157 context-only, 77 derived, and 168 hypothesis edges; evidence-covered edges are 40.4%. Dimension coverage: stages 9/9, domains 13/13, asset classes 9/9, and function groups 6/6. Many domain mappings intentionally remain hypotheses or context-only.
 - 0 orphan nodes and 0 self-loops. Two-hop task reachability is 88/88 (100%), while optional support edges remain typed separately. Evidence coverage remains explicit: context-only and hypothesis mappings are not efficacy claims.
 
 ## Views and controls
