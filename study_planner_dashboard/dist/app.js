@@ -169,16 +169,35 @@
   function renderAll() { renderStats(); renderOverview(); renderTaskLens(); renderTechnologyLens(); renderBottleneck(); renderGaps(); renderPathway(); updateTabs(); }
   function showToast(msg) { const t=$('#toast'); t.textContent=msg; t.classList.add('show'); clearTimeout(showToast.timer); showToast.timer=setTimeout(()=>t.classList.remove('show'),2200); }
   async function exportView() {
-    // Inline all three static assets so the export remains usable when opened outside Sites.
     try {
-      const [css, dataJs, appJs] = await Promise.all(['styles.css','data.js','app.js'].map(u => fetch(u).then(r => r.text())));
-      let html = document.documentElement.outerHTML;
-      html = html.replace('<link rel="stylesheet" href="styles.css" />', `<style>\n${css}\n</style>`);
-      html = html.replace('<script src="data.js"></script>', `<script>\n${dataJs}\n</script>`);
-      html = html.replace('<script src="app.js"></script>', `<script>window.ATLAS_EXPORT=${JSON.stringify(state)};\n${appJs}\n</script>`);
-      const blob=new Blob([`<!doctype html>\n${html}`],{type:'text/html'}); const url=URL.createObjectURL(blob); const a=document.createElement('a'); a.href=url; a.download='llm-finance-economics-functionality-network.html'; a.click(); URL.revokeObjectURL(url); showToast('Exported a self-contained functionality network');
-    } catch (err) { showToast('Export failed: try downloading the page again'); }
+      const assets = ['styles.css', 'radar-data.js', 'data.js', 'app.js', 'radar.js'];
+      const contents = await Promise.all(assets.map(async name => {
+        const response = await fetch(name);
+        if (!response.ok) throw new Error(`Could not load ${name}`);
+        return response.text();
+      }));
+      const copy = document.documentElement.cloneNode(true);
+      const style = document.createElement('style');
+      style.textContent = contents[0].replace(/@import[^;]+;/g, '');
+      copy.querySelector('link[rel="stylesheet"]').replaceWith(style);
+      assets.slice(1).forEach((name, index) => {
+        const script = document.createElement('script');
+        script.textContent = (name === 'app.js' ? `window.ATLAS_EXPORT=${JSON.stringify(state)};\n` : '')
+          + (name === 'radar.js' ? `window.RADAR_EXPORT=${JSON.stringify(location.hash)};\n` : '')
+          + contents[index + 1];
+        copy.querySelector(`script[src="${name}"]`).replaceWith(script);
+      });
+      copy.querySelector('#detailDrawer').classList.remove('is-open');
+      copy.querySelector('#detailDrawer').setAttribute('aria-hidden', 'true');
+      copy.querySelector('#toast').classList.remove('show');
+      const blob = new Blob([`<!doctype html>\n${copy.outerHTML}`], {type:'text/html'});
+      const url = URL.createObjectURL(blob), a = document.createElement('a');
+      a.href = url; a.download = 'llm-finance-research-radar.html'; a.click();
+      setTimeout(() => URL.revokeObjectURL(url), 1000);
+      showToast('Exported the research radar and functionality network');
+    } catch (err) { showToast('Export failed: please retry from the hosted dashboard'); }
   }
+  window.FINANCE_NETWORK = { openNode, closeDrawer };
   $$('.tab').forEach(b=>b.addEventListener('click',()=>{state.view=b.dataset.view;updateTabs();}));
   $('#drawerClose').addEventListener('click',closeDrawer); $('#exportBtn').addEventListener('click',exportView); document.addEventListener('keydown',e=>{if(e.key==='Escape')closeDrawer();});
   setupFilters(); renderAll();

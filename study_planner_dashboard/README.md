@@ -18,3 +18,20 @@ Public static dashboard built from `study_planner_network/study_planner_network.
 - Filters: layer, domain, asset class, workflow stage, edge type, confidence, evidence coverage, criticality, risk and status.
 
 The dashboard is published at <https://ruyi-agent-space.github.io/LLM-in-Finance/>. `LLM_FINANCE_FUNCTIONALITY_AUDIT.md` records the audit scope, coverage stats and residual gaps. Finance/economics mappings remain hypotheses unless a specific source is attached.
+
+## Research radar and automatic updates
+
+- Top navigation: Network, Weekly Spots (5 selected directions), Daily Spots (3 papers), Core Challenges (10 evidence-linked questions).
+- The network uses the full content width. Context cards follow the graph; node inspection opens a temporary bottom panel rather than a right sidebar.
+- `radar-data.json` is the canonical public radar dataset; `radar-data.js` is its browser wrapper. The original graph dataset is unchanged.
+- `scripts/refresh_radar.py` uses public arXiv metadata and GitHub repository metadata. It calls no LLM API and uses no private inputs. Daily selections are deterministic research candidates, not claims of verified scientific quality.
+- `.github/workflows/refresh-radar.yml` runs daily at **06:00 UTC**. It refreshes the weekly sample on Monday, on the initial run, and after an overdue/failed weekly update. GitHub schedules can be delayed. Manual dispatch is also supported. Public repository schedules may be disabled by GitHub after 60 days without activity.
+- Weekly sorting: new papers in the last 7 days within the retrieved financial-LLM sample, then observed approximately 7-day repository star changes when a 6–9 day baseline exists, then cumulative stars. The 5 directions are a curated watchlist, not an exhaustive field-wide top five. No star-growth number is invented for the first run.
+- Daily selection: up to 100 arXiv records ordered by last update; eligible papers must be updated within 90 days, match both finance and language-model topics, and include an evaluation/empirical/code signal. A transparent score combines title relevance (0–6), validation keywords (0–4), and recency (0–2); at most 2 selections per direction. This is metadata screening, not peer review. Older papers may be reselected; publication and update dates remain explicit.
+- On source failure, successful timestamps and content are retained, a visible failure status is published, and the workflow is marked failed **after** publishing that status. A failed workflow/deployment or missed schedule can leave the page stale; the browser warns when daily data is not today's UTC selection or weekly data is over 8 days old. No automatic live-refresh claim is made.
+- The workflow commits only public radar files to this existing repository and deploys the exact checkout to GitHub Pages. A built-in workflow token is scoped to repository contents, Pages, and deployment identity; there are no added secrets or external subscriptions.
+
+### Verification
+
+Run `python -m unittest discover -s tests -p 'test_radar*.py' -v`, then `node --check study_planner_dashboard/app.js` and `node --check study_planner_dashboard/radar.js`. Tests cover source failures, unchanged success dates after failure, candidate dates/relevance/diversity, deduplication, and measured star deltas. The existing graph remains 108 nodes and 411 edges.
+

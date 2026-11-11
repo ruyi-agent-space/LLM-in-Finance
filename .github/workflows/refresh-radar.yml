@@ -1,0 +1,66 @@
+name: Refresh finance research radar
+
+on:
+  schedule:
+    - cron: '0 6 * * *'
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/refresh_radar.py'
+      - '.github/workflows/refresh-radar.yml'
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  refresh-and-publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Check out latest main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Test refresh logic
+        run: python -m unittest discover -s tests -p 'test_radar*.py' -v
+      - name: Refresh daily literature and Monday attention
+        id: refresh
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: python scripts/refresh_radar.py
+      - name: Commit fresh data or visible source-failure status
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add study_planner_dashboard/radar-data.json study_planner_dashboard/radar-data.js study_planner_dashboard/dist/radar-data.json study_planner_dashboard/dist/radar-data.js
+          if ! git diff --cached --quiet; then
+            git commit -m "Refresh public finance research radar"
+            git push origin HEAD:main
+          fi
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v5
+      - name: Upload dashboard
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: study_planner_dashboard
+      - name: Publish dashboard
+        id: deployment
+        uses: actions/deploy-pages@v4
+      - name: Flag source failures after publishing their status
+        if: steps.refresh.outputs.source_failures != ''
+        run: |
+          echo "::error::A public research source failed. Previous successful content and visible error status were published."
+          exit 1

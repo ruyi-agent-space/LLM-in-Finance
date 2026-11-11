@@ -1,10 +1,10 @@
 <!doctype html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>LLM in Finance-Economics Functionality Network</title>
-  <meta name="description" content="Public functionality network for LLMs in finance-economics: capability coverage, technical support completeness, critical challenges, centrality and evidence." />
+  <title>LLM in Finance | Research Radar & Functionality Network</title>
+  <meta name="description" content="LLM in Finance research radar: Weekly Spots, Daily Spots, ten Core Challenges, and an interactive evidence-linked functionality network." />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
@@ -14,7 +14,7 @@
         <div class="brand-mark" aria-hidden="true">✦</div>
         <div>
           <div class="eyebrow">LLM IN FINANCE-ECONOMICS</div>
-          <h1>Functionality Network</h1>
+          <h1>LLM in Finance</h1>
         </div>
       </div>
       <div class="topbar-actions">
@@ -23,27 +23,57 @@
       </div>
     </header>
 
+    <nav class="workspace-nav" aria-label="Workspace navigation">
+      <a href="#network" class="workspace-link is-active" data-workspace="network" aria-current="page">Network <span>交互网络</span></a>
+      <a href="#weekly" class="workspace-link" data-workspace="research">Weekly Spots <span>研究方向</span></a>
+      <a href="#daily" class="workspace-link" data-workspace="research">Daily Spots <span>每日精选</span></a>
+      <a href="#challenges" class="workspace-link" data-workspace="research">Core Challenges <span>核心问题</span></a>
+    </nav>
     <main>
-      <section class="hero">
-        <div class="hero-copy">
-          <p class="kicker">Finance-economics functionality × LLM / agentic technology</p>
-          <h2>Map what an LLM can do, what supports it, and where it breaks.</h2>
-          <p class="hero-lede">Trace functional coverage from foundation technology through reusable capabilities to workflow / asset tasks. Inspect technical support completeness, cross-layer centrality, challenge propagation and evidence before treating a mapping as established.</p>
-          <div class="evidence-legend" aria-label="Evidence status legend">
-            <span class="legend-item"><i class="swatch fact"></i> Evidence-backed</span>
-            <span class="legend-item"><i class="swatch hypothesis"></i> Hypothesis / needs validation</span>
-            <span class="legend-item"><i class="swatch seeded"></i> Seeded / derived</span>
+      <section id="researchWorkspace" aria-label="Research radar" hidden>
+        <div class="radar-hero">
+          <div>
+            <p class="kicker">Research intelligence / LLM × Finance</p>
+            <h2>Follow the signal.<br><span>Question the evidence.</span></h2>
+            <p class="radar-lede">从研究关注度到值得精读的文献，再到真正需要解决的问题。</p>
+          </div>
+          <div class="edition-card">
+            <span class="section-kicker">Curated research edition</span>
+            <strong id="editionDate"></strong>
+            <p>人工精选快照 · 非实时榜单</p>
+            <a href="#methodology">查看排序与更新说明 ↗</a>
           </div>
         </div>
-        <div class="hero-callout">
-          <span class="callout-label">Network objective</span>
-          <strong>coverage → support → challenge → evidence</strong>
-          <span class="callout-note">A = foundations · B = behavior · C = controls &amp; learning</span>
+        <div id="freshnessNotice" class="freshness-notice" role="status"></div>
+        <nav class="radar-jumps" aria-label="Research sections">
+          <a href="#weekly">01 <strong>Weekly Spots</strong><span>5 个方向</span></a>
+          <a href="#daily">02 <strong>Daily Spots</strong><span>3 篇精选</span></a>
+          <a href="#challenges">03 <strong>Core Challenges</strong><span>10 个问题</span></a>
+        </nav>
+        <div class="radar-columns">
+          <section class="radar-section weekly-section" id="weekly" aria-labelledby="weeklyTitle">
+            <header class="radar-heading"><div><p class="section-kicker">01 / Attention watchlist</p><h3 id="weeklyTitle">Weekly Spots <span>研究方向</span></h3></div><span class="count-badge">05</span></header>
+            <p class="section-description" id="weeklyDescription"></p>
+            <ol class="weekly-list" id="weeklyList"></ol>
+          </section>
+          <section class="radar-section daily-section" id="daily" aria-labelledby="dailyTitle">
+            <header class="radar-heading"><div><p class="section-kicker">02 / Read with purpose</p><h3 id="dailyTitle">Daily Spots <span>今日阅读</span></h3></div><span class="count-badge">03</span></header>
+            <p class="section-description" id="dailyDescription"></p>
+            <ol class="daily-list" id="dailyList"></ol>
+          </section>
         </div>
+        <section class="radar-section challenges-section" id="challenges" aria-labelledby="challengesTitle">
+          <header class="radar-heading"><div><p class="section-kicker">03 / Problems worth solving</p><h3 id="challengesTitle">Core Challenges <span>核心挑战</span></h3></div><span class="count-badge">10</span></header>
+          <p class="section-description">十个关键研究问题。按研究链条组织，不代表风险或重要性的量化排名。展开查看验证方法、原始来源与网络节点。</p>
+          <div class="challenge-grid" id="challengeList"></div>
+        </section>
+        <section class="methodology" id="methodology" aria-labelledby="methodTitle">
+          <div><p class="section-kicker">How to read this radar</p><h3 id="methodTitle">看见信号，也看见边界。</h3></div>
+          <div id="methodologyContent"></div>
+        </section>
+        <a href="#network" class="network-cta">继续探索交互网络 <span>108 nodes · Foundations → Functions → Tasks ↗</span></a>
       </section>
-
-      <section class="stat-grid" id="statGrid" aria-label="Dataset summary"></section>
-
+      <section id="networkWorkspace" aria-label="Functionality network">
       <section class="filter-bar" aria-label="Network filters">
         <div class="filter-heading"><span class="filter-icon">⌕</span><span>Slice the functionality network</span><button class="text-btn" id="clearFilters" type="button">Reset</button></div>
         <label>Layer<select id="layerFilter"></select></label>
@@ -73,6 +103,27 @@
       <section id="view-bottleneck" class="view-panel"></section>
       <section id="view-gaps" class="view-panel"></section>
       <section id="view-pathway" class="view-panel"></section>
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="kicker">Finance-economics functionality × LLM / agentic technology</p>
+          <h2>Map what an LLM can do, what supports it, and where it breaks.</h2>
+          <p class="hero-lede">Trace functional coverage from foundation technology through reusable capabilities to workflow / asset tasks. Inspect technical support completeness, cross-layer centrality, challenge propagation and evidence before treating a mapping as established.</p>
+          <div class="evidence-legend" aria-label="Evidence status legend">
+            <span class="legend-item"><i class="swatch fact"></i> Evidence-backed</span>
+            <span class="legend-item"><i class="swatch hypothesis"></i> Hypothesis / needs validation</span>
+            <span class="legend-item"><i class="swatch seeded"></i> Seeded / derived</span>
+          </div>
+        </div>
+        <div class="hero-callout">
+          <span class="callout-label">Network objective</span>
+          <strong>coverage → support → challenge → evidence</strong>
+          <span class="callout-note">A = foundations · B = behavior · C = controls &amp; learning</span>
+        </div>
+      </section>
+
+      <section class="stat-grid" id="statGrid" aria-label="Dataset summary"></section>
+
+      </section>
     </main>
 
     <footer class="footer">
@@ -85,7 +136,10 @@
     <div id="drawerContent"></div>
   </aside>
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <noscript><p class="noscript">此交互页面需要 JavaScript。研究内容可在仓库的 radar-data.js 中查看。</p></noscript>
+  <script src="radar-data.js"></script>
   <script src="data.js"></script>
   <script src="app.js"></script>
+  <script src="radar.js"></script>
 </body>
 </html>
