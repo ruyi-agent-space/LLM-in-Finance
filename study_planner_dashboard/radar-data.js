@@ -1,7 +1,7 @@
 window.FINANCE_RADAR = {
   "schemaVersion": 1,
   "weekly": {
-    "updatedAt": "2026-11-11T03:46:12Z",
+    "updatedAt": "2026-11-11T03:49:33Z",
     "windowDays": 7,
     "methodology": "5个预设精选方向，按近7日 arXiv 检索样本相关新论文数→可比7日Stars增量→累计Stars排序。论文样本上限100篇，主题按公开关键词匹配，方向可交叉；不是全领域总量或客观前五。Stars增量须有6–9天前的实测基线，首次无基线显示“待积累”。累计Stars仅作社区关注度补充，不表示论文质量或投资表现。",
     "items": [
@@ -19,7 +19,7 @@ window.FINANCE_RADAR = {
           "evaluation",
           "reasoning"
         ],
-        "paperCount": 14,
+        "paperCount": 5,
         "starDelta": null,
         "recentPapers": [
           {
@@ -28,88 +28,14 @@ window.FINANCE_RADAR = {
             "publishedAt": "2026-11-08T20:07:52Z"
           },
           {
-            "title": "IFRS Compliance Verification: An Open Multi-LLM Benchmark and Content-Conditioned Ensemble Classifier",
-            "url": "https://arxiv.org/abs/2611.13595",
-            "publishedAt": "2026-11-10T05:12:13Z"
-          },
-          {
             "title": "Tabular Foundation Models in Financial Predictions",
             "url": "https://arxiv.org/abs/2611.13550",
             "publishedAt": "2026-11-10T04:09:40Z"
-          }
-        ],
-        "baselineAt": null
-      },
-      {
-        "id": "document-rag",
-        "title": "财报问答与可溯源 RAG",
-        "category": "Financial Document QA and Grounded RAG",
-        "summary": "在长财报、表格和跨来源数据中检索证据，生成能核验来源与口径的回答。",
-        "repo": "patronus-ai/financebench",
-        "repoUrl": "https://github.com/patronus-ai/financebench",
-        "stars": 389,
-        "nodeId": "FND-RAG",
-        "keywords": [
-          "retrieval",
-          "rag",
-          "question answering",
-          "financial document",
-          "financial report"
-        ],
-        "paperCount": 10,
-        "starDelta": null,
-        "recentPapers": [
-          {
-            "title": "IFRS Compliance Verification: An Open Multi-LLM Benchmark and Content-Conditioned Ensemble Classifier",
-            "url": "https://arxiv.org/abs/2611.13595",
-            "publishedAt": "2026-11-10T05:12:13Z"
-          },
-          {
-            "title": "Depth as a Candidate Source: Portfolio Allocation for Recurrent Test-Time Scaling in Large Language Models",
-            "url": "https://arxiv.org/abs/2611.12293",
-            "publishedAt": "2026-11-09T12:17:59Z"
           },
           {
             "title": "Agent4Crypto: A Dual-Reflective and Market-Feedback-Aligned LLM-Based Multi-Agent System for Cryptocurrency Trading",
             "url": "https://arxiv.org/abs/2611.12269",
             "publishedAt": "2026-11-09T11:57:33Z"
-          }
-        ],
-        "baselineAt": null
-      },
-      {
-        "id": "analyst-copilots",
-        "title": "投研工作流与分析师 Copilot",
-        "category": "Financial Research Workflow Automation",
-        "summary": "把资料检索、确定性估值计算、分析和报告串成可追溯的研究流程。",
-        "repo": "AI4Finance-Foundation/FinRobot",
-        "repoUrl": "https://github.com/AI4Finance-Foundation/FinRobot",
-        "stars": 8407,
-        "nodeId": "FN-DILIGENCE",
-        "keywords": [
-          "financial analys",
-          "financial research",
-          "valuation",
-          "report generation",
-          "copilot"
-        ],
-        "paperCount": 6,
-        "starDelta": null,
-        "recentPapers": [
-          {
-            "title": "FinCutBench: A Continually Updated Benchmark for Measuring the Temporal Boundaries of LLM Financial Knowledge",
-            "url": "https://arxiv.org/abs/2611.11588",
-            "publishedAt": "2026-11-08T20:07:52Z"
-          },
-          {
-            "title": "Tabular Foundation Models in Financial Predictions",
-            "url": "https://arxiv.org/abs/2611.13550",
-            "publishedAt": "2026-11-10T04:09:40Z"
-          },
-          {
-            "title": "Online-Adaptive Fuzzy Cognitive Maps for Neuro-symbolic Financial Forecasting",
-            "url": "https://arxiv.org/abs/2611.13388",
-            "publishedAt": "2026-11-10T00:05:44Z"
           }
         ],
         "baselineAt": null
@@ -151,6 +77,43 @@ window.FINANCE_RADAR = {
         "baselineAt": null
       },
       {
+        "id": "document-rag",
+        "title": "财报问答与可溯源 RAG",
+        "category": "Financial Document QA and Grounded RAG",
+        "summary": "在长财报、表格和跨来源数据中检索证据，生成能核验来源与口径的回答。",
+        "repo": "patronus-ai/financebench",
+        "repoUrl": "https://github.com/patronus-ai/financebench",
+        "stars": 389,
+        "nodeId": "FND-RAG",
+        "keywords": [
+          "retrieval",
+          "rag",
+          "question answering",
+          "financial document",
+          "financial report"
+        ],
+        "paperCount": 3,
+        "starDelta": null,
+        "recentPapers": [
+          {
+            "title": "Agent4Crypto: A Dual-Reflective and Market-Feedback-Aligned LLM-Based Multi-Agent System for Cryptocurrency Trading",
+            "url": "https://arxiv.org/abs/2611.12269",
+            "publishedAt": "2026-11-09T11:57:33Z"
+          },
+          {
+            "title": "BuySideFlow: A Point-in-Time Benchmark for LLM Agents in Investment Research",
+            "url": "https://arxiv.org/abs/2611.12966",
+            "publishedAt": "2026-11-07T12:55:19Z"
+          },
+          {
+            "title": "M3FT: Micro-Macro-Micro Reasoning for Multi-Agent Cryptocurrency Perpetual Futures Trading",
+            "url": "https://arxiv.org/abs/2611.10586",
+            "publishedAt": "2026-11-07T08:51:20Z"
+          }
+        ],
+        "baselineAt": null
+      },
+      {
         "id": "domain-adaptation",
         "title": "金融领域适配与微调",
         "category": "Financial Domain Adaptation",
@@ -165,24 +128,46 @@ window.FINANCE_RADAR = {
           "domain adapt",
           "financial language model"
         ],
-        "paperCount": 2,
+        "paperCount": 1,
         "starDelta": null,
         "recentPapers": [
           {
             "title": "Tabular Foundation Models in Financial Predictions",
             "url": "https://arxiv.org/abs/2611.13550",
             "publishedAt": "2026-11-10T04:09:40Z"
-          },
+          }
+        ],
+        "baselineAt": null
+      },
+      {
+        "id": "analyst-copilots",
+        "title": "投研工作流与分析师 Copilot",
+        "category": "Financial Research Workflow Automation",
+        "summary": "把资料检索、确定性估值计算、分析和报告串成可追溯的研究流程。",
+        "repo": "AI4Finance-Foundation/FinRobot",
+        "repoUrl": "https://github.com/AI4Finance-Foundation/FinRobot",
+        "stars": 8407,
+        "nodeId": "FN-DILIGENCE",
+        "keywords": [
+          "financial analys",
+          "financial research",
+          "valuation",
+          "report generation",
+          "copilot"
+        ],
+        "paperCount": 1,
+        "starDelta": null,
+        "recentPapers": [
           {
-            "title": "Safety Direction Adapter: A Training-Free Post-Hoc Safety Patch for Fine-Tuned Open-Weight LLMs",
-            "url": "https://arxiv.org/abs/2611.10056",
-            "publishedAt": "2026-11-06T00:36:27Z"
+            "title": "BuySideFlow: A Point-in-Time Benchmark for LLM Agents in Investment Research",
+            "url": "https://arxiv.org/abs/2611.12966",
+            "publishedAt": "2026-11-07T12:55:19Z"
           }
         ],
         "baselineAt": null
       }
     ],
-    "windowStart": "2026-11-04T03:46:12Z",
+    "windowStart": "2026-11-04T03:49:33Z",
     "coverage": {
       "recordsFetched": 100,
       "query": "(all:financial OR all:finance OR all:trading OR all:portfolio) AND (all:\"large language model\" OR all:LLM OR all:agentic)",
@@ -190,8 +175,8 @@ window.FINANCE_RADAR = {
     }
   },
   "daily": {
-    "selectedAt": "2026-11-11T03:46:12Z",
-    "methodology": "公开 arXiv 查询最近更新的至多100篇候选；仅保留近90日更新、同时匹配金融与LLM主题且含评测/实证/代码等摘要信号的文献。排序=标题主题匹配（0–6）+验证关键词（0–4）+90日新近度（0–2）；同一方向最多2篇。规则分数不是质量、引用量或投资价值，原文结论未自动验证。",
+    "selectedAt": "2026-11-11T03:49:33Z",
+    "methodology": "公开 arXiv 查询最近更新的至多100篇候选；仅保留近90日更新、金融主题须在标题出现，或在q-fin分类摘要出现至少2种金融关键词；语言模型须在标题出现或摘要提及至少2次，并含评测/实证/代码等摘要信号的文献。排序=标题主题匹配（0–6）+验证关键词（0–4）+90日新近度（0–2）；同一方向最多2篇。规则分数不是质量、引用量或投资价值，原文结论未自动验证。",
     "items": [
       {
         "id": "2611.11588",
@@ -199,26 +184,16 @@ window.FINANCE_RADAR = {
         "url": "https://arxiv.org/abs/2611.11588",
         "publishedAt": "2026-11-08T20:07:52Z",
         "updatedAt": "2026-11-10T08:18:50Z",
+        "categories": [
+          "cs.AI",
+          "cs.CL"
+        ],
         "type": "arXiv 预印本",
-        "why": "匹配“投研工作流与分析师 Copilot”，摘要包含可复核研究信号：benchmark, evaluat, dataset。仅完成元数据与主题筛选，尚未核验实验结论。",
-        "question": "核对数据时点、强基线、消融与样本外设置；检查代码/数据是否可获得，再判断结论是否支持你的研究。",
-        "selectionLabel": "规则筛选 · 非质量背书",
-        "nodeId": "FN-DILIGENCE",
-        "selectionScore": 12.0,
-        "theme": "analyst-copilots"
-      },
-      {
-        "id": "2611.12293",
-        "title": "Depth as a Candidate Source: Portfolio Allocation for Recurrent Test-Time Scaling in Large Language Models",
-        "url": "https://arxiv.org/abs/2611.12293",
-        "publishedAt": "2026-11-09T12:17:59Z",
-        "updatedAt": "2026-11-09T12:17:59Z",
-        "type": "arXiv 预印本",
-        "why": "匹配“金融推理与能力评测”，摘要包含可复核研究信号：experiment, code。仅完成元数据与主题筛选，尚未核验实验结论。",
+        "why": "匹配“金融推理与能力评测”，摘要包含可复核研究信号：benchmark, evaluat, dataset。仅完成元数据与主题筛选，尚未核验实验结论。",
         "question": "核对数据时点、强基线、消融与样本外设置；检查代码/数据是否可获得，再判断结论是否支持你的研究。",
         "selectionLabel": "规则筛选 · 非质量背书",
         "nodeId": "FN-EVAL",
-        "selectionScore": 9.9778,
+        "selectionScore": 12.0,
         "theme": "financial-evaluation"
       },
       {
@@ -227,6 +202,10 @@ window.FINANCE_RADAR = {
         "url": "https://arxiv.org/abs/2611.12269",
         "publishedAt": "2026-11-09T11:57:33Z",
         "updatedAt": "2026-11-09T11:57:33Z",
+        "categories": [
+          "cs.MA",
+          "cs.CL"
+        ],
         "type": "arXiv 预印本",
         "why": "匹配“多智能体投资决策”，摘要包含可复核研究信号：evaluat, experiment。仅完成元数据与主题筛选，尚未核验实验结论。",
         "question": "核对数据时点、强基线、消融与样本外设置；检查代码/数据是否可获得，再判断结论是否支持你的研究。",
@@ -234,14 +213,32 @@ window.FINANCE_RADAR = {
         "nodeId": "FND-RUNTIME",
         "selectionScore": 9.9778,
         "theme": "multi-agent-investing"
+      },
+      {
+        "id": "2611.12966",
+        "title": "BuySideFlow: A Point-in-Time Benchmark for LLM Agents in Investment Research",
+        "url": "https://arxiv.org/abs/2611.12966",
+        "publishedAt": "2026-11-07T12:55:19Z",
+        "updatedAt": "2026-11-07T12:55:19Z",
+        "categories": [
+          "cs.AI"
+        ],
+        "type": "arXiv 预印本",
+        "why": "匹配“金融推理与能力评测”，摘要包含可复核研究信号：benchmark, evaluat。仅完成元数据与主题筛选，尚未核验实验结论。",
+        "question": "核对数据时点、强基线、消融与样本外设置；检查代码/数据是否可获得，再判断结论是否支持你的研究。",
+        "selectionLabel": "规则筛选 · 非质量背书",
+        "nodeId": "FN-EVAL",
+        "selectionScore": 9.9333,
+        "theme": "financial-evaluation"
       }
     ],
     "coverage": {
       "recordsFetched": 100,
-      "eligibleRecords": 34,
+      "eligibleRecords": 9,
       "query": "(all:financial OR all:finance OR all:trading OR all:portfolio) AND (all:\"large language model\" OR all:LLM OR all:agentic)",
       "maxResults": 100,
-      "updatedWithinDays": 90
+      "updatedWithinDays": 90,
+      "screening": "finance title or q-fin plus two finance signals; primary language-model focus; word-boundary keyword matching"
     }
   },
   "challenges": [
@@ -425,12 +422,12 @@ window.FINANCE_RADAR = {
   "status": {
     "daily": {
       "state": "ok",
-      "attemptedAt": "2026-11-11T03:46:12Z",
+      "attemptedAt": "2026-11-11T03:49:33Z",
       "message": "arXiv metadata refreshed"
     },
     "weekly": {
       "state": "ok",
-      "attemptedAt": "2026-11-11T03:46:12Z",
+      "attemptedAt": "2026-11-11T03:49:33Z",
       "message": "Weekly paper sample and project attention refreshed"
     }
   },
@@ -523,6 +520,16 @@ window.FINANCE_RADAR = {
         "AI4Finance-Foundation/FinRobot": 8407,
         "TauricResearch/TradingAgents": 121903,
         "AI4Finance-Foundation/FinGPT": 21548
+      }
+    },
+    {
+      "at": "2026-11-11T03:49:33Z",
+      "stars": {
+        "The-FinAI/PIXIU": 896,
+        "TauricResearch/TradingAgents": 121903,
+        "patronus-ai/financebench": 389,
+        "AI4Finance-Foundation/FinGPT": 21548,
+        "AI4Finance-Foundation/FinRobot": 8407
       }
     }
   ]
