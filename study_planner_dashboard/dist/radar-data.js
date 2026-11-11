@@ -1,7 +1,7 @@
 window.FINANCE_RADAR = {
   "schemaVersion": 1,
   "weekly": {
-    "updatedAt": "2026-11-11T03:58:11Z",
+    "updatedAt": "2026-11-11T03:59:16Z",
     "windowDays": 7,
     "methodology": "5个预设精选方向，按近7日 arXiv 检索样本相关新论文数→可比7日Stars增量→累计Stars排序。论文样本上限100篇，主题按公开关键词匹配，方向可交叉；不是全领域总量或客观前五。Stars增量须有6–9天前的实测基线，首次无基线显示“待积累”。累计Stars仅作社区关注度补充，不表示论文质量或投资表现。",
     "items": [
@@ -167,7 +167,7 @@ window.FINANCE_RADAR = {
         "baselineAt": null
       }
     ],
-    "windowStart": "2026-11-04T03:58:11Z",
+    "windowStart": "2026-11-04T03:59:16Z",
     "coverage": {
       "recordsFetched": 100,
       "query": "(all:financial OR all:finance OR all:trading OR all:portfolio) AND (all:\"large language model\" OR all:LLM OR all:agentic)",
@@ -175,7 +175,7 @@ window.FINANCE_RADAR = {
     }
   },
   "daily": {
-    "selectedAt": "2026-11-11T03:58:11Z",
+    "selectedAt": "2026-11-11T03:59:16Z",
     "methodology": "公开 arXiv 查询最近更新的至多100篇候选；仅保留近90日更新、金融主题须在标题出现，或在q-fin分类摘要出现至少2种金融关键词；语言模型须在标题出现或摘要提及至少2次，并含评测/实证/代码等摘要信号的文献。排序=标题主题匹配（0–6）+验证关键词（0–4）+90日新近度（0–2）；同一方向最多2篇。规则分数不是质量、引用量或投资价值，原文结论未自动验证。",
     "items": [
       {
@@ -422,12 +422,12 @@ window.FINANCE_RADAR = {
   "status": {
     "daily": {
       "state": "ok",
-      "attemptedAt": "2026-11-11T03:58:11Z",
+      "attemptedAt": "2026-11-11T03:59:16Z",
       "message": "arXiv metadata refreshed"
     },
     "weekly": {
       "state": "ok",
-      "attemptedAt": "2026-11-11T03:58:11Z",
+      "attemptedAt": "2026-11-11T03:59:16Z",
       "message": "Weekly paper sample and project attention refreshed"
     }
   },
@@ -534,6 +534,16 @@ window.FINANCE_RADAR = {
     },
     {
       "at": "2026-11-11T03:58:11Z",
+      "stars": {
+        "The-FinAI/PIXIU": 896,
+        "TauricResearch/TradingAgents": 121904,
+        "patronus-ai/financebench": 389,
+        "AI4Finance-Foundation/FinGPT": 21548,
+        "AI4Finance-Foundation/FinRobot": 8407
+      }
+    },
+    {
+      "at": "2026-11-11T03:59:16Z",
       "stars": {
         "The-FinAI/PIXIU": 896,
         "TauricResearch/TradingAgents": 121904,
