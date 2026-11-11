@@ -44,6 +44,11 @@ class RadarTests(unittest.TestCase):
  def test_parser_deduplicates_and_rejects_invalid_ids(self):
   entry='<entry><id>http://arxiv.org/abs/2611.00001v2</id><title>Financial LLM benchmark</title><summary>Financial language models evaluation</summary><published>2026-11-01T00:00:00Z</published><updated>2026-11-09T00:00:00Z</updated></entry>'
   papers=m.parse_arxiv(('<feed xmlns="http://www.w3.org/2005/Atom">'+entry*2+'</feed>').encode());self.assertEqual(len(papers),1);self.assertEqual(papers[0]['url'],'https://arxiv.org/abs/2611.00001')
+ def test_rejects_portfolio_metaphor_and_substring_matches(self):
+  bad=copy.deepcopy(self.papers[0]);bad.update(title='Portfolio Allocation for Test-Time Scaling in Large Language Models',abstract='We evaluate a portfolio of candidate language model outputs with experiments and code.')
+  self.assertFalse(m.eligible(bad,self.now))
+  self.assertFalse(m.matches('average arbitrage','rag'));self.assertFalse(m.matches('evaluation','valuation'))
+  self.assertTrue(m.matches('RAG and valuation','rag'));self.assertTrue(m.matches('financial analysis','financial analys'))
  def test_too_few_does_not_relabel(self):
   updated,errors=m.refresh(self.data,self.now,True,lambda:self.papers[:1],self.getter);self.assertIn('daily',errors);self.assertEqual(updated['daily']['selectedAt'],self.data['daily']['selectedAt'])
 

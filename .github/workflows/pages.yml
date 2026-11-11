@@ -23,6 +23,19 @@ jobs:
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install browser test dependencies
+        run: |
+          python -m pip install playwright==1.56.0
+          python -m playwright install --with-deps chromium
+      - name: Test desktop, mobile and offline export
+        run: |
+          python -m unittest discover -s tests -p 'test_radar*.py' -v
+          python tests/test_dashboard_ui.py
+          node --check study_planner_dashboard/app.js
+          node --check study_planner_dashboard/radar.js
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v5
       - name: Upload dashboard artifact

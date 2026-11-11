@@ -40,7 +40,12 @@ jobs:
         id: refresh
         env:
           GITHUB_TOKEN: ${{ github.token }}
-        run: python scripts/refresh_radar.py
+        run: |
+          if [ "$GITHUB_EVENT_NAME" = "schedule" ]; then
+            python scripts/refresh_radar.py
+          else
+            python scripts/refresh_radar.py --force-weekly
+          fi
       - name: Commit fresh data or visible source-failure status
         run: |
           git config user.name "github-actions[bot]"

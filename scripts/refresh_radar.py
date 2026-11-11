@@ -18,8 +18,8 @@ import xml.etree.ElementTree as ET
 
 UTC = dt.timezone.utc
 QUERY = '(all:financial OR all:finance OR all:trading OR all:portfolio) AND (all:"large language model" OR all:LLM OR all:agentic)'
-FINANCE = ('financ', 'trading', 'portfolio', 'investment', 'stock market', 'equity')
-MODELS = ('large language model', 'llm', 'language models', 'agentic')
+FINANCE = ('financial', 'finance', 'trading', 'investment', 'stock market', 'equity', 'cryptocurrency', 'asset pricing', 'banking', 'credit risk', 'accounting')
+MODELS = ('large language model', 'llm', 'language model', 'agentic')
 VALIDATION = ('benchmark', 'evaluat', 'dataset', 'empirical', 'backtest', 'experiment', 'open-source', 'code')
 ATOM = {'a': 'http://www.w3.org/2005/Atom'}
 
@@ -64,7 +64,7 @@ def parse_arxiv(body):
         if not all([title, abstract, published, updated]):
             continue
         date(published); date(updated)
-        papers.append({'id':match[1], 'title':title, 'abstract':abstract, 'url':'https://arxiv.org/abs/' + match[1], 'publishedAt':published, 'updatedAt':updated})
+        papers.append({'id':match[1], 'title':title, 'abstract':abstract, 'url':'https://arxiv.org/abs/' + match[1], 'publishedAt':published, 'updatedAt':updated, 'categories':[c.get('term','') for c in entry.findall('a:category',ATOM)]})
     if not papers:
         raise ValueError('No valid arXiv records returned')
     return list({p['id']:p for p in papers}.values())
@@ -75,23 +75,37 @@ def fetch_papers():
     return parse_arxiv(request('https://export.arxiv.org/api/query?' + params))
 
 
+def matches(text, phrase):
+    # Whole-word left boundary prevents 'valuation' matching 'evaluation' and
+    # whole-word acronym matching prevents 'rag' matching 'average'/'arbitrage'.
+    end = r'\b' if phrase in ('rag', 'llm', 'code') else r'[a-z-]*\b'
+    return bool(re.search(r'\b' + re.escape(phrase) + end, text, re.I))
+
+
 def eligible(p, now):
     title, abstract = p['title'].lower(), p['abstract'].lower()
     text = title + ' ' + abstract
     age = (now - date(p['updatedAt'])).total_seconds() / 86400
-    return (0 <= age <= 90 and date(p['publishedAt']) <= now and any(x in text for x in FINANCE)
-            and any(x in text for x in MODELS) and any(x in text for x in VALIDATION))
+    finance_title = any(matches(title,x) for x in FINANCE)
+    finance_abstract = sum(matches(abstract,x) for x in FINANCE)
+    qfin = any(c.startswith('q-fin.') for c in p.get('categories',[]))
+    finance_relevant = finance_title or (finance_abstract >= 2 and qfin)
+    model_title = any(matches(title,x) for x in MODELS)
+    model_mentions = len(re.findall(r'\b(?:llms?|large language models?|language models?|agentic)\b',abstract))
+    model_primary = model_title or model_mentions >= 2
+    return (0 <= age <= 90 and date(p['publishedAt']) <= now and finance_relevant
+            and model_primary and any(matches(text,x) for x in VALIDATION))
 
 
 def tags(p, themes):
     text = (p['title'] + ' ' + p['abstract']).lower()
-    return [theme for theme in themes if any(word in text for word in theme['keywords'])]
+    return [theme for theme in themes if any(matches(text,word) for word in theme['keywords'])]
 
 
 def relevance(p, now):
     title, text = p['title'].lower(), (p['title'] + ' ' + p['abstract']).lower()
-    topic = 3 * any(x in title for x in FINANCE) + 3 * any(x in title for x in MODELS)
-    validation = min(4, sum(x in text for x in VALIDATION))
+    topic = 3 * any(matches(title,x) for x in FINANCE) + 3 * any(matches(title,x) for x in MODELS)
+    validation = min(4, sum(matches(text,x) for x in VALIDATION))
     recency = 2 * max(0, 1 - (now-date(p['updatedAt'])).days / 90)
     return round(topic + validation + recency, 4)
 
@@ -101,12 +115,12 @@ def select_daily(papers, themes, now):
     chosen, groups = [], {}
     for paper in ranked:
         related = tags(paper, themes)
-        theme = related[0] if related else next(t for t in themes if t['id']=='financial-evaluation')
+        theme = max(related,key=lambda t:sum(3*matches(paper['title'],w)+matches(paper['abstract'],w) for w in t['keywords'])) if related else next(t for t in themes if t['id']=='financial-evaluation')
         group = theme['id']
         if groups.get(group, 0) >= 2:
             continue
         text = (paper['title']+' '+paper['abstract']).lower()
-        signals = [x for x in VALIDATION if x in text]
+        signals = [x for x in VALIDATION if matches(text,x)]
         chosen.append({k:v for k,v in paper.items() if k != 'abstract'} | {
             'type':'arXiv 预印本', 'why':f'匹配“{theme["title"]}”，摘要包含可复核研究信号：{", ".join(signals[:3])}。仅完成元数据与主题筛选，尚未核验实验结论。',
             'question':'核对数据时点、强基线、消融与样本外设置；检查代码/数据是否可获得，再判断结论是否支持你的研究。',
@@ -155,8 +169,8 @@ def refresh(data, now, force_weekly=False, paper_fetcher=fetch_papers, getter=re
         papers = paper_fetcher()
         data['daily']['items'] = select_daily(papers,data['weekly']['items'],now)
         data['daily']['selectedAt'] = stamp(now)
-        data['daily']['coverage'] = {'recordsFetched':len(papers),'eligibleRecords':sum(eligible(p,now) for p in papers),'query':QUERY,'maxResults':100,'updatedWithinDays':90}
-        data['daily']['methodology'] = '公开 arXiv 查询最近更新的至多100篇候选；仅保留近90日更新、同时匹配金融与LLM主题且含评测/实证/代码等摘要信号的文献。排序=标题主题匹配（0–6）+验证关键词（0–4）+90日新近度（0–2）；同一方向最多2篇。规则分数不是质量、引用量或投资价值，原文结论未自动验证。'
+        data['daily']['coverage'] = {'recordsFetched':len(papers),'eligibleRecords':sum(eligible(p,now) for p in papers),'query':QUERY,'maxResults':100,'updatedWithinDays':90,'screening':'finance title or q-fin plus two finance signals; primary language-model focus; word-boundary keyword matching'}
+        data['daily']['methodology'] = '公开 arXiv 查询最近更新的至多100篇候选；仅保留近90日更新、金融主题须在标题出现，或在q-fin分类摘要出现至少2种金融关键词；语言模型须在标题出现或摘要提及至少2次，并含评测/实证/代码等摘要信号的文献。排序=标题主题匹配（0–6）+验证关键词（0–4）+90日新近度（0–2）；同一方向最多2篇。规则分数不是质量、引用量或投资价值，原文结论未自动验证。'
         data['status']['daily'] = {'state':'ok','attemptedAt':stamp(now),'message':'arXiv metadata refreshed'}
     except Exception as error:
         papers = None
