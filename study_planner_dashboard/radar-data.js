@@ -1,68 +1,10 @@
 window.FINANCE_RADAR = {
   "schemaVersion": 1,
   "weekly": {
-    "updatedAt": "2026-11-11",
+    "updatedAt": "2026-11-11T03:46:12Z",
     "windowDays": 7,
-    "methodology": "5 个精选方向，允许交叉。自动更新后，先按近7日 arXiv 检索样本中的相关新论文数排序，再按有可比基线的7日 Stars 增量，最后按累计 Stars。首轮无周度基线时不展示虚构增量。论文数不是全领域总量，Stars不是研究质量或投资表现。初始精选仅有累计 Stars，首次自动采集后补充周度信号。",
+    "methodology": "5个预设精选方向，按近7日 arXiv 检索样本相关新论文数→可比7日Stars增量→累计Stars排序。论文样本上限100篇，主题按公开关键词匹配，方向可交叉；不是全领域总量或客观前五。Stars增量须有6–9天前的实测基线，首次无基线显示“待积累”。累计Stars仅作社区关注度补充，不表示论文质量或投资表现。",
     "items": [
-      {
-        "id": "multi-agent-investing",
-        "title": "多智能体投资决策",
-        "category": "Multi-agent Investment Decisions",
-        "summary": "让分析、辩论与风控角色协作生成投资决策，研究重点是协作是否带来可验证的增益。",
-        "repo": "TauricResearch/TradingAgents",
-        "repoUrl": "https://github.com/TauricResearch/TradingAgents",
-        "stars": 121901,
-        "nodeId": "FND-RUNTIME",
-        "keywords": [
-          "multi-agent",
-          "multi agent",
-          "trading agent",
-          "investment decision"
-        ],
-        "paperCount": null,
-        "starDelta": null,
-        "recentPapers": []
-      },
-      {
-        "id": "domain-adaptation",
-        "title": "金融领域适配与微调",
-        "category": "Financial Domain Adaptation",
-        "summary": "用金融数据、指令微调与参数高效训练，让通用模型掌握领域术语和任务。",
-        "repo": "AI4Finance-Foundation/FinGPT",
-        "repoUrl": "https://github.com/AI4Finance-Foundation/FinGPT",
-        "stars": 21548,
-        "nodeId": "FN-RL-SFT",
-        "keywords": [
-          "fine-tun",
-          "finetun",
-          "domain adapt",
-          "financial language model"
-        ],
-        "paperCount": null,
-        "starDelta": null,
-        "recentPapers": []
-      },
-      {
-        "id": "analyst-copilots",
-        "title": "投研工作流与分析师 Copilot",
-        "category": "Financial Research Workflow Automation",
-        "summary": "把资料检索、确定性估值计算、分析和报告串成可追溯的研究流程。",
-        "repo": "AI4Finance-Foundation/FinRobot",
-        "repoUrl": "https://github.com/AI4Finance-Foundation/FinRobot",
-        "stars": 8407,
-        "nodeId": "FN-DILIGENCE",
-        "keywords": [
-          "financial analys",
-          "financial research",
-          "valuation",
-          "report generation",
-          "copilot"
-        ],
-        "paperCount": null,
-        "starDelta": null,
-        "recentPapers": []
-      },
       {
         "id": "financial-evaluation",
         "title": "金融推理与能力评测",
@@ -77,9 +19,26 @@ window.FINANCE_RADAR = {
           "evaluation",
           "reasoning"
         ],
-        "paperCount": null,
+        "paperCount": 14,
         "starDelta": null,
-        "recentPapers": []
+        "recentPapers": [
+          {
+            "title": "FinCutBench: A Continually Updated Benchmark for Measuring the Temporal Boundaries of LLM Financial Knowledge",
+            "url": "https://arxiv.org/abs/2611.11588",
+            "publishedAt": "2026-11-08T20:07:52Z"
+          },
+          {
+            "title": "IFRS Compliance Verification: An Open Multi-LLM Benchmark and Content-Conditioned Ensemble Classifier",
+            "url": "https://arxiv.org/abs/2611.13595",
+            "publishedAt": "2026-11-10T05:12:13Z"
+          },
+          {
+            "title": "Tabular Foundation Models in Financial Predictions",
+            "url": "https://arxiv.org/abs/2611.13550",
+            "publishedAt": "2026-11-10T04:09:40Z"
+          }
+        ],
+        "baselineAt": null
       },
       {
         "id": "document-rag",
@@ -97,53 +56,193 @@ window.FINANCE_RADAR = {
           "financial document",
           "financial report"
         ],
-        "paperCount": null,
+        "paperCount": 10,
         "starDelta": null,
-        "recentPapers": []
+        "recentPapers": [
+          {
+            "title": "IFRS Compliance Verification: An Open Multi-LLM Benchmark and Content-Conditioned Ensemble Classifier",
+            "url": "https://arxiv.org/abs/2611.13595",
+            "publishedAt": "2026-11-10T05:12:13Z"
+          },
+          {
+            "title": "Depth as a Candidate Source: Portfolio Allocation for Recurrent Test-Time Scaling in Large Language Models",
+            "url": "https://arxiv.org/abs/2611.12293",
+            "publishedAt": "2026-11-09T12:17:59Z"
+          },
+          {
+            "title": "Agent4Crypto: A Dual-Reflective and Market-Feedback-Aligned LLM-Based Multi-Agent System for Cryptocurrency Trading",
+            "url": "https://arxiv.org/abs/2611.12269",
+            "publishedAt": "2026-11-09T11:57:33Z"
+          }
+        ],
+        "baselineAt": null
+      },
+      {
+        "id": "analyst-copilots",
+        "title": "投研工作流与分析师 Copilot",
+        "category": "Financial Research Workflow Automation",
+        "summary": "把资料检索、确定性估值计算、分析和报告串成可追溯的研究流程。",
+        "repo": "AI4Finance-Foundation/FinRobot",
+        "repoUrl": "https://github.com/AI4Finance-Foundation/FinRobot",
+        "stars": 8407,
+        "nodeId": "FN-DILIGENCE",
+        "keywords": [
+          "financial analys",
+          "financial research",
+          "valuation",
+          "report generation",
+          "copilot"
+        ],
+        "paperCount": 6,
+        "starDelta": null,
+        "recentPapers": [
+          {
+            "title": "FinCutBench: A Continually Updated Benchmark for Measuring the Temporal Boundaries of LLM Financial Knowledge",
+            "url": "https://arxiv.org/abs/2611.11588",
+            "publishedAt": "2026-11-08T20:07:52Z"
+          },
+          {
+            "title": "Tabular Foundation Models in Financial Predictions",
+            "url": "https://arxiv.org/abs/2611.13550",
+            "publishedAt": "2026-11-10T04:09:40Z"
+          },
+          {
+            "title": "Online-Adaptive Fuzzy Cognitive Maps for Neuro-symbolic Financial Forecasting",
+            "url": "https://arxiv.org/abs/2611.13388",
+            "publishedAt": "2026-11-10T00:05:44Z"
+          }
+        ],
+        "baselineAt": null
+      },
+      {
+        "id": "multi-agent-investing",
+        "title": "多智能体投资决策",
+        "category": "Multi-agent Investment Decisions",
+        "summary": "让分析、辩论与风控角色协作生成投资决策，研究重点是协作是否带来可验证的增益。",
+        "repo": "TauricResearch/TradingAgents",
+        "repoUrl": "https://github.com/TauricResearch/TradingAgents",
+        "stars": 121903,
+        "nodeId": "FND-RUNTIME",
+        "keywords": [
+          "multi-agent",
+          "multi agent",
+          "trading agent",
+          "investment decision"
+        ],
+        "paperCount": 4,
+        "starDelta": null,
+        "recentPapers": [
+          {
+            "title": "Agent4Crypto: A Dual-Reflective and Market-Feedback-Aligned LLM-Based Multi-Agent System for Cryptocurrency Trading",
+            "url": "https://arxiv.org/abs/2611.12269",
+            "publishedAt": "2026-11-09T11:57:33Z"
+          },
+          {
+            "title": "Inside the Trading Loop: Markets, Models, and Moves with LLM Agents",
+            "url": "https://arxiv.org/abs/2611.11657",
+            "publishedAt": "2026-11-08T22:27:56Z"
+          },
+          {
+            "title": "M3FT: Micro-Macro-Micro Reasoning for Multi-Agent Cryptocurrency Perpetual Futures Trading",
+            "url": "https://arxiv.org/abs/2611.10586",
+            "publishedAt": "2026-11-07T08:51:20Z"
+          }
+        ],
+        "baselineAt": null
+      },
+      {
+        "id": "domain-adaptation",
+        "title": "金融领域适配与微调",
+        "category": "Financial Domain Adaptation",
+        "summary": "用金融数据、指令微调与参数高效训练，让通用模型掌握领域术语和任务。",
+        "repo": "AI4Finance-Foundation/FinGPT",
+        "repoUrl": "https://github.com/AI4Finance-Foundation/FinGPT",
+        "stars": 21548,
+        "nodeId": "FN-RL-SFT",
+        "keywords": [
+          "fine-tun",
+          "finetun",
+          "domain adapt",
+          "financial language model"
+        ],
+        "paperCount": 2,
+        "starDelta": null,
+        "recentPapers": [
+          {
+            "title": "Tabular Foundation Models in Financial Predictions",
+            "url": "https://arxiv.org/abs/2611.13550",
+            "publishedAt": "2026-11-10T04:09:40Z"
+          },
+          {
+            "title": "Safety Direction Adapter: A Training-Free Post-Hoc Safety Patch for Fine-Tuned Open-Weight LLMs",
+            "url": "https://arxiv.org/abs/2611.10056",
+            "publishedAt": "2026-11-06T00:36:27Z"
+          }
+        ],
+        "baselineAt": null
       }
-    ]
+    ],
+    "windowStart": "2026-11-04T03:46:12Z",
+    "coverage": {
+      "recordsFetched": 100,
+      "query": "(all:financial OR all:finance OR all:trading OR all:portfolio) AND (all:\"large language model\" OR all:LLM OR all:agentic)",
+      "weeklyPaperCount": "first submission within 7 days; keyword-classified sample; themes may overlap"
+    }
   },
   "daily": {
-    "selectedAt": "2026-11-11",
-    "methodology": "初始3篇为编辑精选：真实金融任务的证据可靠性、策略的样本外有效性、数学推理与可执行代码。自动更新覆盖 arXiv 近90日更新的金融×LLM文献样本，需同时匹配金融与语言模型主题，并有评测/实证/代码等可复核信号；按主题相关性、验证信号与新近度加权，并限制同一方向最多2篇。预印本、非全网穷尽，不承诺科研质量。",
+    "selectedAt": "2026-11-11T03:46:12Z",
+    "methodology": "公开 arXiv 查询最近更新的至多100篇候选；仅保留近90日更新、同时匹配金融与LLM主题且含评测/实证/代码等摘要信号的文献。排序=标题主题匹配（0–6）+验证关键词（0–4）+90日新近度（0–2）；同一方向最多2篇。规则分数不是质量、引用量或投资价值，原文结论未自动验证。",
     "items": [
       {
-        "id": "agenticfinbench-2026",
-        "title": "AgenticFinBench: Benchmarking Financial Agents on Diverse Tasks from Real-World Requests",
-        "url": "https://arxiv.org/abs/2611.04813",
-        "type": "论文 · 预印本",
-        "publishedAt": "2026-11-03",
-        "updatedAt": "2026-11-03",
-        "why": "把“答案正确”与“有证据支持”拆开评估，适合检查金融 Agent 是否真的可靠。",
-        "question": "优先看证据审计、任务复杂度分层，以及模型与工具编排的贡献拆分。",
-        "selectionLabel": "编辑精选 · 摘要层核验",
-        "nodeId": "FN-EVAL"
+        "id": "2611.11588",
+        "title": "FinCutBench: A Continually Updated Benchmark for Measuring the Temporal Boundaries of LLM Financial Knowledge",
+        "url": "https://arxiv.org/abs/2611.11588",
+        "publishedAt": "2026-11-08T20:07:52Z",
+        "updatedAt": "2026-11-10T08:18:50Z",
+        "type": "arXiv 预印本",
+        "why": "匹配“投研工作流与分析师 Copilot”，摘要包含可复核研究信号：benchmark, evaluat, dataset。仅完成元数据与主题筛选，尚未核验实验结论。",
+        "question": "核对数据时点、强基线、消融与样本外设置；检查代码/数据是否可获得，再判断结论是否支持你的研究。",
+        "selectionLabel": "规则筛选 · 非质量背书",
+        "nodeId": "FN-DILIGENCE",
+        "selectionScore": 12.0,
+        "theme": "analyst-copilots"
       },
       {
-        "id": "quant-arena-2026",
-        "title": "Quant-Arena: Benchmarking LLM Agents for Quantitative Trading Research",
-        "url": "https://arxiv.org/abs/2610.30113",
-        "type": "论文 · 预印本",
-        "publishedAt": "2026-10-21",
-        "updatedAt": "2026-10-21",
-        "why": "直接回答“会写策略是否等于有投资价值”，把样本外表现、交易约束与成本放到核心位置。",
-        "question": "先读时间切分、冻结策略协议、现金账户限制和市场冲击假设。",
-        "selectionLabel": "编辑精选 · 摘要层核验",
-        "nodeId": "FND-BACKTEST"
+        "id": "2611.12293",
+        "title": "Depth as a Candidate Source: Portfolio Allocation for Recurrent Test-Time Scaling in Large Language Models",
+        "url": "https://arxiv.org/abs/2611.12293",
+        "publishedAt": "2026-11-09T12:17:59Z",
+        "updatedAt": "2026-11-09T12:17:59Z",
+        "type": "arXiv 预印本",
+        "why": "匹配“金融推理与能力评测”，摘要包含可复核研究信号：experiment, code。仅完成元数据与主题筛选，尚未核验实验结论。",
+        "question": "核对数据时点、强基线、消融与样本外设置；检查代码/数据是否可获得，再判断结论是否支持你的研究。",
+        "selectionLabel": "规则筛选 · 非质量背书",
+        "nodeId": "FN-EVAL",
+        "selectionScore": 9.9778,
+        "theme": "financial-evaluation"
       },
       {
-        "id": "quanteval-2026",
-        "title": "QuantEval: A Benchmark for Financial Quantitative Tasks in Large Language Models",
-        "url": "https://arxiv.org/abs/2601.08689",
-        "type": "论文 · 预印本",
-        "publishedAt": "2026-01-13",
-        "updatedAt": "2026-10-14",
-        "why": "10 月更新版把评测从金融问答推进到“计算、实现、验证”闭环，适合构建自己的模型验收清单。",
-        "question": "重点看代码执行评测、风险收益指标、完整回测配置和微调与强化学习的取舍。",
-        "selectionLabel": "编辑精选 · 摘要层核验",
-        "nodeId": "FN-ACCOUNTING"
+        "id": "2611.12269",
+        "title": "Agent4Crypto: A Dual-Reflective and Market-Feedback-Aligned LLM-Based Multi-Agent System for Cryptocurrency Trading",
+        "url": "https://arxiv.org/abs/2611.12269",
+        "publishedAt": "2026-11-09T11:57:33Z",
+        "updatedAt": "2026-11-09T11:57:33Z",
+        "type": "arXiv 预印本",
+        "why": "匹配“多智能体投资决策”，摘要包含可复核研究信号：evaluat, experiment。仅完成元数据与主题筛选，尚未核验实验结论。",
+        "question": "核对数据时点、强基线、消融与样本外设置；检查代码/数据是否可获得，再判断结论是否支持你的研究。",
+        "selectionLabel": "规则筛选 · 非质量背书",
+        "nodeId": "FND-RUNTIME",
+        "selectionScore": 9.9778,
+        "theme": "multi-agent-investing"
       }
-    ]
+    ],
+    "coverage": {
+      "recordsFetched": 100,
+      "eligibleRecords": 34,
+      "query": "(all:financial OR all:finance OR all:trading OR all:portfolio) AND (all:\"large language model\" OR all:LLM OR all:agentic)",
+      "maxResults": 100,
+      "updatedWithinDays": 90
+    }
   },
   "challenges": [
     {
@@ -325,10 +424,14 @@ window.FINANCE_RADAR = {
   ],
   "status": {
     "daily": {
-      "state": "seeded"
+      "state": "ok",
+      "attemptedAt": "2026-11-11T03:46:12Z",
+      "message": "arXiv metadata refreshed"
     },
     "weekly": {
-      "state": "seeded"
+      "state": "ok",
+      "attemptedAt": "2026-11-11T03:46:12Z",
+      "message": "Weekly paper sample and project attention refreshed"
     }
   },
   "sources": {
@@ -410,5 +513,17 @@ window.FINANCE_RADAR = {
     "公开英文论文和开源项目覆盖较多，不能代表金融机构内部研究或全部中文研究。",
     "AgenticFinBench 和 FinDocMRE 的标题、日期和摘要来自搜索工具返回的 arXiv 原始索引记录；其正文未能直接抓取。其他所列 arXiv/ACL 页面已直接打开。",
     "这些研究构成编辑精选，不是穷尽的系统文献检索，也不构成投资建议。"
+  ],
+  "starHistory": [
+    {
+      "at": "2026-11-11T03:46:12Z",
+      "stars": {
+        "The-FinAI/PIXIU": 896,
+        "patronus-ai/financebench": 389,
+        "AI4Finance-Foundation/FinRobot": 8407,
+        "TauricResearch/TradingAgents": 121903,
+        "AI4Finance-Foundation/FinGPT": 21548
+      }
+    }
   ]
 };
