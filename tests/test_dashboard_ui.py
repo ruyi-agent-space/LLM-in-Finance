@@ -41,7 +41,7 @@ class DashboardUI(unittest.TestCase):
   page.keyboard.press('Escape');self.assertEqual(page.locator('#detailDrawer').get_attribute('aria-hidden'),'true')
  def test_research_counts_disclosures_history_and_export(self):
   page=self.page
-  page.locator('.workspace-link[href="#hotspots"]').click()
+  page.locator('.workspace-link[href="#hotspots"]').click();page.locator('#weekly').wait_for(state='visible');page.locator('#daily').wait_for(state='visible')
   page.locator('#researchWorkspace').wait_for(state='visible');self.assertTrue(page.locator('#researchWorkspace').is_visible())
   self.assertEqual(page.locator('.weekly-card').count(),5);self.assertEqual(page.locator('.daily-card').count(),3);self.assertEqual(page.locator('.challenge-card').count(),10)
   page.locator('.workspace-link[href="#challenges"]').click()
@@ -54,7 +54,7 @@ class DashboardUI(unittest.TestCase):
   with tempfile.TemporaryDirectory() as directory:
    path=Path(directory)/'export.html';download.value.save_as(path)
    content=path.read_text();self.assertNotIn('script src=',content);self.assertNotIn('href="styles.css"',content)
-   page.goto(path.as_uri());self.assertEqual(page.evaluate("getComputedStyle(document.documentElement).getPropertyValue('--ink').trim()"),'#16232b');self.assertEqual(page.locator('.graph-node').count(),108);page.locator('.workspace-link[href="#hotspots"]').click();self.assertEqual(page.locator('.daily-card').count(),3)
+   page.goto(path.as_uri());self.assertEqual(page.evaluate("getComputedStyle(document.documentElement).getPropertyValue('--ink').trim()"),'#16232b');self.assertEqual(page.locator('.graph-node').count(),108);page.locator('.workspace-link[href="#hotspots"]').click();page.locator('#weekly').wait_for(state='visible');page.locator('#daily').wait_for(state='visible');self.assertEqual(page.locator('.daily-card').count(),3)
    page.locator('[data-lang="en"]').click();page.locator('.workspace-link[href="#network"]').click();self.assertEqual(page.locator('#clearFilters').text_content(),'Reset')
  def test_mobile_layout_and_repeated_navigation(self):
   page=self.page;page.set_viewport_size({'width':390,'height':844})
@@ -81,7 +81,7 @@ class DashboardUI(unittest.TestCase):
   for view in ['overview','task','technology','bottleneck','gaps','pathway']:
    page.locator(f'.tab[data-view="{view}"]').click()
    self.assertNotRegex(page.locator(f'#view-{view}').inner_text(),r'[\u4e00-\u9fff]')
-  page.locator('.workspace-link[href="#hotspots"]').click()
+  page.locator('.workspace-link[href="#hotspots"]').click();page.locator('#weekly').wait_for(state='visible');page.locator('#daily').wait_for(state='visible')
   self.assertTrue(page.locator('#weekly').is_visible());self.assertTrue(page.locator('#daily').is_visible())
   self.assertFalse(page.locator('#challenges').is_visible())
   self.assertEqual(page.locator('#weeklyTitle').inner_text(),'Weekly Spots')
@@ -98,7 +98,7 @@ class DashboardUI(unittest.TestCase):
  def test_english_export_and_bilingual_failure_status(self):
   page=self.page
   page.locator('[data-lang="en"]').click()
-  page.locator('.workspace-link[href="#hotspots"]').click()
+  page.locator('.workspace-link[href="#hotspots"]').click();page.locator('#weekly').wait_for(state='visible');page.locator('#daily').wait_for(state='visible')
   with page.expect_download() as download: page.locator('#exportBtn').click()
   with tempfile.TemporaryDirectory() as directory:
    path=Path(directory)/'english.html';download.value.save_as(path);page.goto(path.as_uri())
