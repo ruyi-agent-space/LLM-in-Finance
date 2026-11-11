@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>LLM in Finance | Research Radar & Functionality Network</title>
   <meta name="description" content="LLM in Finance research radar: Weekly Spots, Daily Spots, ten Core Challenges, and an interactive evidence-linked functionality network." />
-  <link rel="stylesheet" href="styles.css?v=20261111-radar4" />
+  <link rel="stylesheet" href="styles.css?v=20261111-bilingual1" />
 </head>
 <body>
   <div class="app-shell">
@@ -24,54 +24,49 @@
     </header>
 
     <nav class="workspace-nav" aria-label="Workspace navigation">
-      <a href="#network" class="workspace-link is-active" data-workspace="network" aria-current="page">Network <span>交互网络</span></a>
-      <a href="#weekly" class="workspace-link" data-workspace="research">Weekly Spots <span>研究方向</span></a>
-      <a href="#daily" class="workspace-link" data-workspace="research">Daily Spots <span>每日精选</span></a>
-      <a href="#challenges" class="workspace-link" data-workspace="research">Core Challenges <span>核心问题</span></a>
+      <a href="#network" class="workspace-link is-active" data-workspace="network" aria-current="page" data-zh="交互网络" data-en="Network">交互网络</a>
+      <a href="#hotspots" class="workspace-link" data-workspace="hotspots" data-zh="研究热点" data-en="Hot Spots">研究热点</a>
+      <a href="#challenges" class="workspace-link" data-workspace="challenges" data-zh="核心挑战" data-en="Core Challenges">核心挑战</a>
+      <div class="language-picker" role="group" aria-label="Language / 语言"><button type="button" data-lang="zh" aria-pressed="true">中文</button><button type="button" data-lang="en" aria-pressed="false">EN</button></div>
     </nav>
     <main>
       <section id="researchWorkspace" aria-label="Research radar" hidden>
         <div class="radar-hero">
           <div>
-            <p class="kicker">Research intelligence / LLM × Finance</p>
-            <h2>Follow the signal.<br><span>Question the evidence.</span></h2>
-            <p class="radar-lede">从研究关注度到值得精读的文献，再到真正需要解决的问题。</p>
+            <p class="kicker" data-zh="研究雷达 / 金融大模型" data-en="Research intelligence / LLM × Finance">研究雷达 / 金融大模型</p>
+            <h2 id="researchHeroTitle">追踪热点，审视证据。</h2>
+            <p class="radar-lede" data-zh="从研究关注度到值得精读的文献，再到真正需要解决的问题。" data-en="From research attention and worthwhile reading to the problems that still need solving.">从研究关注度到值得精读的文献，再到真正需要解决的问题。</p>
           </div>
           <div class="edition-card">
-            <span class="section-kicker">Curated research edition</span>
+            <span class="section-kicker" data-zh="研究精选快照" data-en="Curated research edition">研究精选快照</span>
             <strong id="editionDate"></strong>
-            <p>人工精选快照 · 非实时榜单</p>
-            <a href="#methodology">查看排序与更新说明 ↗</a>
+            <p data-zh="每日文献 · 每周关注度" data-en="Daily literature · weekly attention">每日文献 · 每周关注度</p>
+            <a href="#methodology" data-zh="查看排序与更新说明 ↗" data-en="Read the methodology ↗">查看排序与更新说明 ↗</a>
           </div>
         </div>
         <div id="freshnessNotice" class="freshness-notice" role="status"></div>
-        <nav class="radar-jumps" aria-label="Research sections">
-          <a href="#weekly">01 <strong>Weekly Spots</strong><span>5 个方向</span></a>
-          <a href="#daily">02 <strong>Daily Spots</strong><span>3 篇精选</span></a>
-          <a href="#challenges">03 <strong>Core Challenges</strong><span>10 个问题</span></a>
-        </nav>
-        <div class="radar-columns">
+        <div class="radar-columns" id="hotspots">
           <section class="radar-section weekly-section" id="weekly" aria-labelledby="weeklyTitle">
-            <header class="radar-heading"><div><p class="section-kicker">01 / Attention watchlist</p><h3 id="weeklyTitle">Weekly Spots <span>研究方向</span></h3></div><span class="count-badge">05</span></header>
+            <header class="radar-heading"><div><p class="section-kicker" data-zh="01 / 研究关注度" data-en="01 / Attention watchlist">01 / 研究关注度</p><h3 id="weeklyTitle">Weekly Spots <span>研究方向</span></h3></div><span class="count-badge">05</span></header>
             <p class="section-description" id="weeklyDescription"></p>
             <ol class="weekly-list" id="weeklyList"></ol>
           </section>
           <section class="radar-section daily-section" id="daily" aria-labelledby="dailyTitle">
-            <header class="radar-heading"><div><p class="section-kicker">02 / Read with purpose</p><h3 id="dailyTitle">Daily Spots <span>今日阅读</span></h3></div><span class="count-badge">03</span></header>
+            <header class="radar-heading"><div><p class="section-kicker" data-zh="02 / 每日阅读" data-en="02 / Read with purpose">02 / 每日阅读</p><h3 id="dailyTitle">Daily Spots <span>今日阅读</span></h3></div><span class="count-badge">03</span></header>
             <p class="section-description" id="dailyDescription"></p>
             <ol class="daily-list" id="dailyList"></ol>
           </section>
         </div>
         <section class="radar-section challenges-section" id="challenges" aria-labelledby="challengesTitle">
-          <header class="radar-heading"><div><p class="section-kicker">03 / Problems worth solving</p><h3 id="challengesTitle">Core Challenges <span>核心挑战</span></h3></div><span class="count-badge">10</span></header>
-          <p class="section-description">十个关键研究问题。按研究链条组织，不代表风险或重要性的量化排名。展开查看验证方法、原始来源与网络节点。</p>
+          <header class="radar-heading"><div><p class="section-kicker" data-zh="03 / 值得解决的问题" data-en="03 / Problems worth solving">03 / 值得解决的问题</p><h3 id="challengesTitle">Core Challenges <span>核心挑战</span></h3></div><span class="count-badge">10</span></header>
+          <p class="section-description" data-zh="十个关键研究问题，按研究链条组织，不是重要性的量化排名。展开查看验证方法、原文来源与网络节点。" data-en="Ten key questions organized along the research workflow, not a numerical importance ranking. Expand each for tests, original sources and network links.">十个关键研究问题，按研究链条组织，不是重要性的量化排名。展开查看验证方法、原文来源与网络节点。</p>
           <div class="challenge-grid" id="challengeList"></div>
         </section>
         <section class="methodology" id="methodology" aria-labelledby="methodTitle">
-          <div><p class="section-kicker">How to read this radar</p><h3 id="methodTitle">看见信号，也看见边界。</h3></div>
+          <div><p class="section-kicker" data-zh="如何阅读研究雷达" data-en="How to read this radar">如何阅读研究雷达</p><h3 id="methodTitle" data-zh="看见信号，也看见边界。" data-en="See the signal and its limits.">看见信号，也看见边界。</h3></div>
           <div id="methodologyContent"></div>
         </section>
-        <a href="#network" class="network-cta">继续探索交互网络 <span>108 nodes · Foundations → Functions → Tasks ↗</span></a>
+        <a href="#network" class="network-cta"><strong data-zh="继续探索交互网络" data-en="Explore the functionality network">继续探索交互网络</strong><span data-zh="108个节点 · 基础技术 → 功能 → 任务 ↗" data-en="108 nodes · Foundations → Functions → Tasks ↗">108个节点 · 基础技术 → 功能 → 任务 ↗</span></a>
       </section>
       <section id="networkWorkspace" aria-label="Functionality network">
       <section class="filter-bar" aria-label="Network filters">
@@ -137,9 +132,12 @@
   </aside>
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
   <noscript><p class="noscript">此交互页面需要 JavaScript。研究内容可在仓库的 radar-data.js 中查看。</p></noscript>
-  <script src="radar-data.js?v=24c4c44f12e84a9b"></script>
-  <script src="data.js?v=20261111-radar4"></script>
-  <script src="app.js?v=20261111-radar5"></script>
-  <script src="radar.js?v=20261111-radar4"></script>
+  <script src="radar-data.js?v=20261111-bilingual1"></script>
+  <script src="data.js?v=20261111-bilingual1"></script>
+  <script src="network-i18n.js?v=20261111-bilingual1"></script>
+  <script src="i18n.js?v=20261111-bilingual1"></script>
+  <script src="radar-copy.js?v=20261111-bilingual1"></script>
+  <script src="app.js?v=20261111-bilingual1"></script>
+  <script src="radar.js?v=20261111-bilingual1"></script>
 </body>
 </html>

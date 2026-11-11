@@ -21,7 +21,7 @@
   const isFoundation = n => n && (n.node_type === 'technology' || n.node_type === 'foundation_technology' || ['foundation','L1_foundation'].includes(n.layer));
   const isCapability = n => n && (n.node_type === 'function' || n.node_type === 'capability_function' || ['capability','L2_function'].includes(n.layer));
   const nodeLayer = n => isTask(n) ? 'task' : isFoundation(n) ? 'foundation' : isCapability(n) ? 'capability' : (n?.layer || 'other');
-  const riskScore = n => /high|critical|unsafe|loss|leak|breach|injection|exfiltration|drift|bias|overfit|misspec|false confidence|unauthorized|hallucinat|regression|reward hack|snooping|stale|propagation|impact/i.test(`${n.risk || ''} ${n.risks || ''} ${n.failure_mode || ''} ${n.downstream_impact || ''} ${n.description || ''}`) ? 1 : 0;
+  const riskScore = n => /high|critical|unsafe|loss|leak|breach|injection|exfiltration|drift|bias|overfit|misspec|false confidence|unauthorized|hallucinat|regression|reward hack|snooping|stale|propagation|impact/i.test(['risk','risks','failure_mode','downstream_impact','description'].map(key=>window.FINANCE_I18N?.sourceText(n,key) ?? n[key] ?? '').join(' ')) ? 1 : 0;
   const isRiskEdge = e => e && ['risk_propagation','risk_propagates'].includes(e.edge_type);
   const isFeedbackEdge = e => e && e.edge_type === 'feedback_to';
   const edgePass = e => e.confidence >= Number(state.confidence) && (state.edgeType === 'all' || e.edge_type === state.edgeType) && (state.status === 'all' || e.status === state.status) && (state.evidence === 'all' || e.evidence_coverage === state.evidence) && (state.criticality === 'all' || e.criticality === state.criticality) && (state.risk === 'all' || (state.risk === 'high' ? riskScore(e) : !riskScore(e)));
@@ -170,19 +170,20 @@
   function showToast(msg) { const t=$('#toast'); t.textContent=msg; t.classList.add('show'); clearTimeout(showToast.timer); showToast.timer=setTimeout(()=>t.classList.remove('show'),2200); }
   async function exportView() {
     try {
-      const assets = ['styles.css', 'radar-data.js', 'data.js', 'app.js', 'radar.js'];
+      const assets = ['styles.css', 'radar-data.js', 'data.js', 'network-i18n.js', 'i18n.js', 'radar-copy.js', 'app.js', 'radar.js'];
       const contents = await Promise.all(assets.map(async name => {
         const response = await fetch(`${name}?export=${Date.now()}`, {cache:'no-store'});
         if (!response.ok) throw new Error(`Could not load ${name}`);
         return response.text();
       }));
       const copy = document.documentElement.cloneNode(true);
+      window.FINANCE_I18N?.prepareExport(copy);
       const style = document.createElement('style');
       style.textContent = contents[0].replace(/@import\s+url\([^)]*\)\s*;/g, '');
       copy.querySelector('link[rel="stylesheet"]').replaceWith(style);
       assets.slice(1).forEach((name, index) => {
         const script = document.createElement('script');
-        script.textContent = (name === 'app.js' ? `window.ATLAS_EXPORT=${JSON.stringify(state)};\n` : '')
+        script.textContent = (name === 'i18n.js' ? `window.FINANCE_EXPORT_LANG=${JSON.stringify(window.FINANCE_I18N?.lang || 'zh')};\n` : '') + (name === 'app.js' ? `window.ATLAS_EXPORT=${JSON.stringify(state)};\n` : '')
           + (name === 'radar.js' ? `window.RADAR_EXPORT=${JSON.stringify(location.hash)};\n` : '')
           + contents[index + 1];
         copy.querySelector(`script[src^="${name}"]`).replaceWith(script);
@@ -200,5 +201,6 @@
   window.FINANCE_NETWORK = { openNode, closeDrawer };
   $$('.tab').forEach(b=>b.addEventListener('click',()=>{state.view=b.dataset.view;updateTabs();}));
   $('#drawerClose').addEventListener('click',closeDrawer); $('#exportBtn').addEventListener('click',exportView); document.addEventListener('keydown',e=>{if(e.key==='Escape')closeDrawer();});
+  window.addEventListener('finance-language-change', () => { closeDrawer(); renderAll(); });
   setupFilters(); renderAll();
 })();

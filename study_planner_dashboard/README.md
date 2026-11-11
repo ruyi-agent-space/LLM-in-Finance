@@ -21,7 +21,8 @@ The dashboard is published at <https://ruyi-agent-space.github.io/LLM-in-Finance
 
 ## Research radar and automatic updates
 
-- Top navigation: Network, Weekly Spots (5 selected directions), Daily Spots (3 papers), Core Challenges (10 evidence-linked questions).
+- Top navigation: Network, Hot Spots (weekly 5 directions and daily 3 readings shown together), Core Challenges (10 evidence-linked questions).
+- A persistent 中文 / EN picker controls the complete interface, graph descriptions, research summaries, status and methodology. The default is Chinese. Original paper titles and proper technical names are labeled/preserved; new papers use prewritten bilingual screening explanations, not live translation. The chosen language is included in offline exports. Translation never changes data identifiers, filters or risk scoring.
 - The network uses the full content width. Context cards follow the graph; node inspection opens a temporary bottom panel rather than a right sidebar.
 - `radar-data.json` is the canonical public radar dataset; `radar-data.js` is its browser wrapper. The original graph dataset is unchanged.
 - `scripts/refresh_radar.py` uses public arXiv metadata and GitHub repository metadata. It calls no LLM API and uses no private inputs. Daily selections are deterministic research candidates, not claims of verified scientific quality.

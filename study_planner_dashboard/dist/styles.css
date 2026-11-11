@@ -184,3 +184,11 @@ a { text-underline-offset:3px; }
 .radar-section,.methodology { scroll-margin-top:80px; }
 .detail-drawer { visibility:hidden; pointer-events:none; }
 .detail-drawer.is-open { visibility:visible; pointer-events:auto; }
+.language-picker { display:flex; align-items:center; gap:3px; margin-left:auto; padding:4px; border:1px solid var(--line-dark); border-radius:10px; background:white; }
+.language-picker button { background:transparent; color:var(--muted); border:0; border-radius:7px; padding:7px 10px; font-size:12px; }.language-picker button.is-active { background:var(--teal); color:white; }
+.original-title-label { color:var(--muted); font-size:9px; margin:12px 0 -6px; }
+#hotspots { scroll-margin-top:80px; }
+#researchWorkspace .radar-hero h2 { max-width:900px; }
+#challenges:not([hidden]) { margin-top:0; padding-top:8px; border-top:0; }
+html[lang="zh-CN"] .eyebrow,html[lang="zh-CN"] .section-kicker,html[lang="zh-CN"] .view-tabs { letter-spacing:.02em; }
+@media(max-width:480px) { .workspace-link { padding:9px 7px; font-size:10px; }.language-picker { padding:2px; gap:0; }.language-picker button { padding:7px 6px; font-size:10px; }.workspace-nav { gap:4px; } }
