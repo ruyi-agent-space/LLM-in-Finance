@@ -55,7 +55,7 @@ class DashboardUI(unittest.TestCase):
    path=Path(directory)/'export.html';download.value.save_as(path)
    content=path.read_text();self.assertNotIn('script src=',content);self.assertNotIn('href="styles.css"',content)
    page.goto(path.as_uri());self.assertEqual(page.evaluate("getComputedStyle(document.documentElement).getPropertyValue('--ink').trim()"),'#16232b');self.assertEqual(page.locator('.graph-node').count(),108);page.locator('.workspace-link[href="#hotspots"]').click();self.assertEqual(page.locator('.daily-card').count(),3)
-   page.locator('[data-lang="en"]').click();page.locator('.workspace-link[href="#network"]').click();self.assertEqual(page.locator('#clearFilters').inner_text(),'Reset')
+   page.locator('[data-lang="en"]').click();page.locator('.workspace-link[href="#network"]').click();self.assertEqual(page.locator('#clearFilters').text_content(),'Reset')
  def test_mobile_layout_and_repeated_navigation(self):
   page=self.page;page.set_viewport_size({'width':390,'height':844})
   for target in ['hotspots','challenges','network','hotspots','network']:
@@ -69,7 +69,7 @@ class DashboardUI(unittest.TestCase):
   self.assertEqual(page.locator('html').get_attribute('lang'),'zh-CN')
   self.assertEqual(page.locator('.workspace-link[href="#weekly"]').count(),0)
   self.assertEqual(page.locator('.workspace-link[href="#daily"]').count(),0)
-  self.assertEqual(page.locator('#clearFilters').inner_text(),'重置')
+  self.assertEqual(page.locator('#clearFilters').text_content(),'重置')
   initial_ids=page.locator('.graph-node').evaluate_all('(nodes)=>nodes.map(n=>n.dataset.node)')
   page.locator('#riskFilter').select_option('high')
   risk_ids=page.locator('.graph-node').evaluate_all('(nodes)=>nodes.map(n=>n.dataset.node)')
@@ -77,7 +77,7 @@ class DashboardUI(unittest.TestCase):
   page.locator('[data-lang="en"]').click()
   self.assertEqual(page.locator('html').get_attribute('lang'),'en')
   self.assertEqual(page.locator('.graph-node').evaluate_all('(nodes)=>nodes.map(n=>n.dataset.node)'),risk_ids)
-  self.assertEqual(page.locator('#clearFilters').inner_text(),'Reset')
+  self.assertEqual(page.locator('#clearFilters').text_content(),'Reset')
   for view in ['overview','task','technology','bottleneck','gaps','pathway']:
    page.locator(f'.tab[data-view="{view}"]').click()
    self.assertNotRegex(page.locator(f'#view-{view}').inner_text(),r'[\u4e00-\u9fff]')
