@@ -4,6 +4,7 @@ import importlib.util
 import json
 from pathlib import Path
 import unittest
+import tempfile
 
 ROOT=Path(__file__).resolve().parents[1]
 spec=importlib.util.spec_from_file_location('refresh_radar',ROOT/'scripts/refresh_radar.py')
@@ -49,6 +50,10 @@ class RadarTests(unittest.TestCase):
   self.assertFalse(m.eligible(bad,self.now))
   self.assertFalse(m.matches('average arbitrage','rag'));self.assertFalse(m.matches('evaluation','valuation'))
   self.assertTrue(m.matches('RAG and valuation','rag'));self.assertTrue(m.matches('financial analysis','financial analys'))
+ def test_script_wrapper_escapes_html_end_tags(self):
+  data=copy.deepcopy(self.data);data['daily']['items'][0]['title']='Example </script><script>alert(1)</script>'
+  with tempfile.TemporaryDirectory() as directory:
+   m.write(data,Path(directory));self.assertNotIn('</script>',(Path(directory)/'radar-data.js').read_text());self.assertIn('\\u003c',(Path(directory)/'radar-data.js').read_text())
  def test_too_few_does_not_relabel(self):
   updated,errors=m.refresh(self.data,self.now,True,lambda:self.papers[:1],self.getter);self.assertIn('daily',errors);self.assertEqual(updated['daily']['selectedAt'],self.data['daily']['selectedAt'])
 

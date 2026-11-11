@@ -201,7 +201,8 @@ def refresh(data, now, force_weekly=False, paper_fetcher=fetch_papers, getter=re
 def write(data, directory):
     text = json.dumps(data,ensure_ascii=False,indent=2)+'\n'
     (directory/'radar-data.json').write_text(text,encoding='utf-8')
-    (directory/'radar-data.js').write_text('window.FINANCE_RADAR = '+text.strip()+';\n',encoding='utf-8')
+    safe_js = text.strip().replace('<', r'\u003c').replace('>', r'\u003e').replace('&', r'\u0026')
+    (directory/'radar-data.js').write_text('window.FINANCE_RADAR = '+safe_js+';\n',encoding='utf-8')
     # Keep the pre-existing downloadable dist copy consistent with the hosted dashboard.
     if (directory/'dist').is_dir():
         for name in ['radar-data.json','radar-data.js']:
