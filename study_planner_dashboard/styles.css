@@ -177,3 +177,10 @@ a { text-underline-offset:3px; }
 #networkWorkspace { padding-top:22px; }.network-scroll { height:74vh; min-height:520px; }.layered-card { padding:18px; }.network-scroll .layered-graph { min-height:0; }
 .detail-drawer { top:auto; right:auto; left:50%; bottom:16px; height:auto; max-height:62vh; width:min(1000px,calc(100vw - 32px)); border:1px solid var(--line-dark); border-radius:16px; box-shadow:0 -10px 55px #16232b26; transform:translate(-50%,120%); }.detail-drawer.is-open { transform:translate(-50%,0); }
 @media(max-width:760px) { .layered-layout>:nth-child(2),.panel-grid>:nth-child(2),.detail-layout>:nth-child(2) { grid-template-columns:1fr; }.detail-drawer { padding:18px; bottom:8px; width:calc(100vw - 16px); }.network-scroll { height:70vh; min-height:400px; }.workspace-nav { gap:6px; }.workspace-link { font-size:11px; padding:9px; } }
+.app-shell { max-width:none; }
+#researchWorkspace { max-width:1476px; margin-inline:auto; }
+.workspace-nav { position:sticky; top:0; z-index:10; background:var(--paper); padding:12px 0; }
+#networkWorkspace .view-tabs { top:64px; }
+.radar-section,.methodology { scroll-margin-top:80px; }
+.detail-drawer { visibility:hidden; pointer-events:none; }
+.detail-drawer.is-open { visibility:visible; pointer-events:auto; }

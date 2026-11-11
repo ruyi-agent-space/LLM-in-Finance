@@ -52,7 +52,7 @@
   $('#methodologyContent').innerHTML = `<p><strong>关注度口径。</strong> ${escape(data.weekly.methodology)}</p><p><strong>文献筛选。</strong> ${escape(data.daily.methodology)}</p>
     <p><strong>自动更新。</strong> 每日 06:00 UTC 筛选文献；每周一 06:00 UTC 更新代表项目 Stars 并重新排序。GitHub Actions 可能延迟，实际成功时间以本页为准。API 失败时保留上次成功内容并记录错误；若整个工作流未启动或发布失败，本页会按日期提示过期。</p>
     <div class="update-status"><span>Daily 最近成功 <strong>${escape(data.daily.selectedAt)}</strong></span><span>Weekly 最近成功 <strong>${escape(data.weekly.updatedAt)}</strong></span></div>
-    <p class="method-links">${external('https://github.com/ruyi-agent-space/LLM-in-Finance/actions/workflows/refresh-radar.yml', '更新运行记录')} · ${external('https://github.com/ruyi-agent-space/LLM-in-Finance/blob/main/study_planner_dashboard/radar-data.json', '公开数据与来源')} · 仅供研究，不构成投资建议。</p>`;
+    <p class="coverage-copy">公开文献样本：${data.daily.coverage ? `${data.daily.coverage.recordsFetched} 篇候选，${data.daily.coverage.eligibleRecords} 篇通过主题筛选` : '初始人工精选'}。主要覆盖英文公开研究，不包含机构内部成果；Core Challenges 为有来源支持的人工整理，不随热榜自动改写。</p><p class="method-links">${external('https://github.com/ruyi-agent-space/LLM-in-Finance/actions/workflows/refresh-radar.yml', '更新运行记录')} · ${external('https://github.com/ruyi-agent-space/LLM-in-Finance/blob/main/study_planner_dashboard/radar-data.json', '公开数据与来源')} · 仅供研究，不构成投资建议。</p>`;
 
   function route() {
     const hash = location.hash || window.RADAR_EXPORT || '#network';

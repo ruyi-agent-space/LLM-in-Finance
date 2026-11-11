@@ -42,12 +42,12 @@ class DashboardUI(unittest.TestCase):
  def test_research_counts_disclosures_history_and_export(self):
   page=self.page
   page.locator('.workspace-link[href="#weekly"]').click()
-  self.assertTrue(page.locator('#researchWorkspace').is_visible())
+  page.locator('#researchWorkspace').wait_for(state='visible');self.assertTrue(page.locator('#researchWorkspace').is_visible())
   self.assertEqual(page.locator('.weekly-card').count(),5);self.assertEqual(page.locator('.daily-card').count(),3);self.assertEqual(page.locator('.challenge-card').count(),10)
   page.locator('.challenge-card summary').first.click();self.assertEqual(page.locator('.challenge-card[open]').count(),1)
   page.locator('.challenge-card[open] [data-radar-node]').click();self.assertEqual(page.locator('#detailDrawer').get_attribute('aria-hidden'),'false')
   page.locator('#drawerClose').click();page.locator('.challenge-card summary').first.click();self.assertEqual(page.locator('.challenge-card[open]').count(),0)
-  page.locator('.workspace-link[href="#network"]').click();page.go_back();self.assertTrue(page.locator('#researchWorkspace').is_visible());page.go_forward();self.assertTrue(page.locator('#networkWorkspace').is_visible())
+  page.locator('.workspace-link[href="#network"]').click();page.go_back();page.locator('#researchWorkspace').wait_for(state='visible');self.assertTrue(page.locator('#researchWorkspace').is_visible());page.go_forward();page.locator('#networkWorkspace').wait_for(state='visible');self.assertTrue(page.locator('#networkWorkspace').is_visible())
   with page.expect_download() as download:
    page.locator('#exportBtn').click()
   with tempfile.TemporaryDirectory() as directory:
@@ -58,6 +58,7 @@ class DashboardUI(unittest.TestCase):
   page=self.page;page.set_viewport_size({'width':390,'height':844})
   for target in ['weekly','daily','challenges','network','weekly','network']:
    page.locator(f'.workspace-link[href="#{target}"]').click()
+   page.locator('#networkWorkspace' if target=='network' else '#researchWorkspace').wait_for(state='visible')
    self.assertLessEqual(page.evaluate('document.documentElement.scrollWidth'),392)
   page.locator('.workspace-link[href="#challenges"]').click();page.locator('.challenge-card summary').nth(9).click();self.assertTrue(page.locator('.challenge-card').nth(9).locator('.challenge-content').is_visible())
 

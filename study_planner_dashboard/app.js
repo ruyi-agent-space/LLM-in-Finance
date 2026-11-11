@@ -86,7 +86,7 @@
       [fmtRatio(summary.coveredTasks,summary.ts.length),'functional coverage',''],
       [fmtRatio(summary.supportedFunctions,summary.fn.length),'technical support',''],
       [fmtRatio(summary.riskEdges,fe.length),'risk exposure','accent'],
-      [String(challengeNodes),'core challenges',''],
+      [String(challengeNodes),'graph challenge flags',''],
       [summary.top ? Number(summary.top.centrality_proxy || 0).toFixed(2) : '—','top centrality proxy',''],
       [fmtRatio(sourceBacked,fs.length),'source-backed nodes',''],
       [fmtRatio(evidenceCoveredEdges,fe.length),'evidence-covered edges','']
