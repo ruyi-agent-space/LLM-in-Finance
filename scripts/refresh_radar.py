@@ -8,6 +8,7 @@ import argparse
 import copy
 import datetime as dt
 import json
+import hashlib
 import os
 from pathlib import Path
 import re
@@ -203,9 +204,15 @@ def write(data, directory):
     (directory/'radar-data.json').write_text(text,encoding='utf-8')
     safe_js = text.strip().replace('<', r'\u003c').replace('>', r'\u003e').replace('&', r'\u0026')
     (directory/'radar-data.js').write_text('window.FINANCE_RADAR = '+safe_js+';\n',encoding='utf-8')
+    index = directory/'index.html'
+    if index.exists():
+        asset_hash = hashlib.sha256((directory/'radar-data.js').read_bytes()).hexdigest()[:16]
+        html = index.read_text(encoding='utf-8')
+        html = re.sub(r'src="radar-data\.js(?:\?[^" ]*)?"', 'src="radar-data.js?v='+asset_hash+'"', html)
+        index.write_text(html,encoding='utf-8')
     # Keep the pre-existing downloadable dist copy consistent with the hosted dashboard.
     if (directory/'dist').is_dir():
-        for name in ['radar-data.json','radar-data.js']:
+        for name in ['radar-data.json','radar-data.js'] + (['index.html'] if index.exists() else []):
             (directory/'dist'/name).write_text((directory/name).read_text(),encoding='utf-8')
 
 

@@ -172,7 +172,7 @@
     try {
       const assets = ['styles.css', 'radar-data.js', 'data.js', 'app.js', 'radar.js'];
       const contents = await Promise.all(assets.map(async name => {
-        const response = await fetch(name);
+        const response = await fetch(`${name}?export=${Date.now()}`, {cache:'no-store'});
         if (!response.ok) throw new Error(`Could not load ${name}`);
         return response.text();
       }));
@@ -185,7 +185,7 @@
         script.textContent = (name === 'app.js' ? `window.ATLAS_EXPORT=${JSON.stringify(state)};\n` : '')
           + (name === 'radar.js' ? `window.RADAR_EXPORT=${JSON.stringify(location.hash)};\n` : '')
           + contents[index + 1];
-        copy.querySelector(`script[src="${name}"]`).replaceWith(script);
+        copy.querySelector(`script[src^="${name}"]`).replaceWith(script);
       });
       copy.querySelector('#detailDrawer').classList.remove('is-open');
       copy.querySelector('#detailDrawer').setAttribute('aria-hidden', 'true');

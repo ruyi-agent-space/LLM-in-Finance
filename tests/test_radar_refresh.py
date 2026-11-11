@@ -54,6 +54,11 @@ class RadarTests(unittest.TestCase):
   data=copy.deepcopy(self.data);data['daily']['items'][0]['title']='Example </script><script>alert(1)</script>'
   with tempfile.TemporaryDirectory() as directory:
    m.write(data,Path(directory));self.assertNotIn('</script>',(Path(directory)/'radar-data.js').read_text());self.assertIn('\\u003c',(Path(directory)/'radar-data.js').read_text())
+ def test_cache_key_changes_with_data(self):
+  with tempfile.TemporaryDirectory() as directory:
+   root=Path(directory);(root/'index.html').write_text('<script src="radar-data.js?v=old"></script>')
+   m.write(self.data,root);first=(root/'index.html').read_text();self.assertNotIn('v=old',first)
+   changed=copy.deepcopy(self.data);changed['status']['daily']['attemptedAt']='2026-11-12T06:00:00Z';m.write(changed,root);self.assertNotEqual(first,(root/'index.html').read_text())
  def test_too_few_does_not_relabel(self):
   updated,errors=m.refresh(self.data,self.now,True,lambda:self.papers[:1],self.getter);self.assertIn('daily',errors);self.assertEqual(updated['daily']['selectedAt'],self.data['daily']['selectedAt'])
 
