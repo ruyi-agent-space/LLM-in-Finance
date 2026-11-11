@@ -53,7 +53,7 @@ class DashboardUI(unittest.TestCase):
   with tempfile.TemporaryDirectory() as directory:
    path=Path(directory)/'export.html';download.value.save_as(path)
    content=path.read_text();self.assertNotIn('script src=',content);self.assertNotIn('href="styles.css"',content)
-   page.goto(path.as_uri());self.assertEqual(page.locator('.graph-node').count(),108);page.locator('.workspace-link[href="#daily"]').click();self.assertEqual(page.locator('.daily-card').count(),3)
+   page.goto(path.as_uri());self.assertEqual(page.evaluate("getComputedStyle(document.documentElement).getPropertyValue('--ink').trim()"),'#16232b');self.assertEqual(page.locator('.graph-node').count(),108);page.locator('.workspace-link[href="#daily"]').click();self.assertEqual(page.locator('.daily-card').count(),3)
  def test_mobile_layout_and_repeated_navigation(self):
   page=self.page;page.set_viewport_size({'width':390,'height':844})
   for target in ['weekly','daily','challenges','network','weekly','network']:

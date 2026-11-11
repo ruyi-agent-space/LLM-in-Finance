@@ -178,7 +178,7 @@
       }));
       const copy = document.documentElement.cloneNode(true);
       const style = document.createElement('style');
-      style.textContent = contents[0].replace(/@import[^;]+;/g, '');
+      style.textContent = contents[0].replace(/@import\s+url\([^)]*\)\s*;/g, '');
       copy.querySelector('link[rel="stylesheet"]').replaceWith(style);
       assets.slice(1).forEach((name, index) => {
         const script = document.createElement('script');
