@@ -92,7 +92,7 @@ class DashboardUI(unittest.TestCase):
   self.assertEqual(page.locator('.original-title-label').first.inner_text(),'论文原文标题')
   page.locator('.workspace-link[href="#network"]').click();page.locator('#clearFilters').click()
   self.assertEqual(page.locator('.graph-node').evaluate_all('(nodes)=>nodes.map(n=>n.dataset.node)'),initial_ids)
-  self.assertRegex(page.locator('.graph-node').first.inner_text(),r'[\u4e00-\u9fff]')
+  self.assertRegex(page.locator('.graph-node').first.text_content(),r'[\u4e00-\u9fff]')
   unmatched=page.evaluate("""() => {const w=document.createTreeWalker(document.querySelector('#networkWorkspace'),NodeFilter.SHOW_TEXT),out=[];let n;while(n=w.nextNode()){const s=n.nodeValue.trim();if(/[A-Za-z]{3}/.test(s)&&!/[\u4e00-\u9fff]/.test(s)&&!s.startsWith('https:'))out.push(s)}return [...new Set(out)].slice(0,100)}""")
   print('ZH_PROPER_NAMES_OR_UNMATCHED',unmatched)
  def test_english_export_and_bilingual_failure_status(self):
