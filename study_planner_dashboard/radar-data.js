@@ -421,14 +421,14 @@ window.FINANCE_RADAR = {
   ],
   "status": {
     "daily": {
-      "state": "ok",
-      "attemptedAt": "2026-11-15T13:01:11Z",
-      "message": "arXiv metadata refreshed"
+      "state": "error",
+      "attemptedAt": "2026-11-16T14:05:50Z",
+      "message": "公开文献源暂不可用或候选不足 (HTTPError)"
     },
     "weekly": {
-      "state": "ok",
-      "attemptedAt": "2026-11-11T06:57:47Z",
-      "message": "Weekly paper sample and project attention refreshed"
+      "state": "error",
+      "attemptedAt": "2026-11-16T14:05:50Z",
+      "message": "周度来源采集未完整成功 (ValueError)"
     }
   },
   "sources": {
