@@ -147,7 +147,7 @@ window.FINANCE_RADAR = {
     }
   },
   "daily": {
-    "selectedAt": "2026-11-18T14:40:26Z",
+    "selectedAt": "2026-11-19T14:46:44Z",
     "methodology": "公开 arXiv 查询最近更新的至多100篇候选；仅保留近90日更新、金融主题须在标题出现，或在q-fin分类摘要出现至少2种金融关键词；语言模型须在标题出现或摘要提及至少2次，并含评测/实证/代码等摘要信号的文献。排序=标题主题匹配（0–6）+验证关键词（0–4）+90日新近度（0–2）；同一方向最多2篇。规则分数不是质量、引用量或投资价值，原文结论未自动验证。",
     "items": [
       {
@@ -166,26 +166,8 @@ window.FINANCE_RADAR = {
         "question": "核对数据时点、强基线、消融与样本外设置；检查代码/数据是否可获得，再判断结论是否支持你的研究。",
         "selectionLabel": "规则筛选 · 非质量背书",
         "nodeId": "FND-RUNTIME",
-        "selectionScore": 10.9111,
+        "selectionScore": 10.8889,
         "theme": "multi-agent-investing"
-      },
-      {
-        "id": "2610.33253",
-        "title": "Operationalizing Governed Agentic Workflows in Regulated Finance: A Customer Zero Case Study using Zafin AIOS",
-        "url": "https://arxiv.org/abs/2610.33253",
-        "publishedAt": "2026-10-23T19:55:22Z",
-        "updatedAt": "2026-11-13T15:08:00Z",
-        "categories": [
-          "cs.SE",
-          "cs.AI"
-        ],
-        "type": "arXiv 预印本",
-        "why": "匹配“金融推理与能力评测”，摘要包含可复核研究信号：evaluat, empirical, experiment。仅完成元数据与主题筛选，尚未核验实验结论。",
-        "question": "核对数据时点、强基线、消融与样本外设置；检查代码/数据是否可获得，再判断结论是否支持你的研究。",
-        "selectionLabel": "规则筛选 · 非质量背书",
-        "nodeId": "FN-EVAL",
-        "selectionScore": 10.9111,
-        "theme": "financial-evaluation"
       },
       {
         "id": "2611.19530",
@@ -202,8 +184,25 @@ window.FINANCE_RADAR = {
         "question": "核对数据时点、强基线、消融与样本外设置；检查代码/数据是否可获得，再判断结论是否支持你的研究。",
         "selectionLabel": "规则筛选 · 非质量背书",
         "nodeId": "FND-RUNTIME",
-        "selectionScore": 9.9333,
+        "selectionScore": 9.9111,
         "theme": "multi-agent-investing"
+      },
+      {
+        "id": "2611.20423",
+        "title": "FinVerify: A Verification Framework for Financial Agents",
+        "url": "https://arxiv.org/abs/2611.20423",
+        "publishedAt": "2026-11-16T02:37:53Z",
+        "updatedAt": "2026-11-16T02:37:53Z",
+        "categories": [
+          "cs.AI"
+        ],
+        "type": "arXiv 预印本",
+        "why": "匹配“金融推理与能力评测”，摘要包含可复核研究信号：benchmark, evaluat, dataset。仅完成元数据与主题筛选，尚未核验实验结论。",
+        "question": "核对数据时点、强基线、消融与样本外设置；检查代码/数据是否可获得，再判断结论是否支持你的研究。",
+        "selectionLabel": "规则筛选 · 非质量背书",
+        "nodeId": "FN-EVAL",
+        "selectionScore": 7.9333,
+        "theme": "financial-evaluation"
       }
     ],
     "coverage": {
@@ -396,7 +395,7 @@ window.FINANCE_RADAR = {
   "status": {
     "daily": {
       "state": "ok",
-      "attemptedAt": "2026-11-18T14:40:26Z",
+      "attemptedAt": "2026-11-19T14:46:44Z",
       "message": "arXiv metadata refreshed"
     },
     "weekly": {
