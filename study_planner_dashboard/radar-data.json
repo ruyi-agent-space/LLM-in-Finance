@@ -147,67 +147,68 @@
     }
   },
   "daily": {
-    "selectedAt": "2026-11-19T14:46:44Z",
+    "selectedAt": "2026-11-20T14:27:47Z",
     "methodology": "公开 arXiv 查询最近更新的至多100篇候选；仅保留近90日更新、金融主题须在标题出现，或在q-fin分类摘要出现至少2种金融关键词；语言模型须在标题出现或摘要提及至少2次，并含评测/实证/代码等摘要信号的文献。排序=标题主题匹配（0–6）+验证关键词（0–4）+90日新近度（0–2）；同一方向最多2篇。规则分数不是质量、引用量或投资价值，原文结论未自动验证。",
     "items": [
       {
-        "id": "2611.18934",
-        "title": "Short Windows, Unmodelled Costs, Unknown Cutoffs: A Pre-Registered Evidence Audit of 91 LLM Trading Papers",
-        "url": "https://arxiv.org/abs/2611.18934",
-        "publishedAt": "2026-11-13T20:37:42Z",
-        "updatedAt": "2026-11-13T20:37:42Z",
+        "id": "2611.25071",
+        "title": "FinVeriQA: Financial Research Agents for Question Answering: Routing, Retrieval, MCP Tool Use, and Provenance-Aware Evidence Verification",
+        "url": "https://arxiv.org/abs/2611.25071",
+        "publishedAt": "2026-11-18T19:13:45Z",
+        "updatedAt": "2026-11-18T19:13:45Z",
         "categories": [
-          "q-fin.CP",
-          "q-fin.GN",
-          "q-fin.TR"
+          "cs.CL",
+          "cs.AI",
+          "cs.IR",
+          "cs.MA"
         ],
         "type": "arXiv 预印本",
-        "why": "匹配“多智能体投资决策”，摘要包含可复核研究信号：evaluat, empirical, code。仅完成元数据与主题筛选，尚未核验实验结论。",
+        "why": "匹配“财报问答与可溯源 RAG”，摘要包含可复核研究信号：benchmark, experiment, open-source。仅完成元数据与主题筛选，尚未核验实验结论。",
         "question": "核对数据时点、强基线、消融与样本外设置；检查代码/数据是否可获得，再判断结论是否支持你的研究。",
         "selectionLabel": "规则筛选 · 非质量背书",
-        "nodeId": "FND-RUNTIME",
-        "selectionScore": 10.8889,
-        "theme": "multi-agent-investing"
+        "nodeId": "FND-RAG",
+        "selectionScore": 8.9778,
+        "theme": "document-rag"
       },
       {
-        "id": "2611.19530",
-        "title": "LLM Trading Agents Earn Beta, Not Alpha: A Look-Ahead-Free Benchmark",
-        "url": "https://arxiv.org/abs/2611.19530",
-        "publishedAt": "2026-11-14T17:57:11Z",
-        "updatedAt": "2026-11-14T17:57:11Z",
+        "id": "2611.22177",
+        "title": "The Only Edge Was Memorized in Training: LLM Trading Agents Around Earnings and Bad News",
+        "url": "https://arxiv.org/abs/2611.22177",
+        "publishedAt": "2026-11-17T04:13:18Z",
+        "updatedAt": "2026-11-17T04:13:18Z",
         "categories": [
           "cs.AI",
           "cs.MA"
         ],
         "type": "arXiv 预印本",
-        "why": "匹配“多智能体投资决策”，摘要包含可复核研究信号：benchmark, backtest。仅完成元数据与主题筛选，尚未核验实验结论。",
+        "why": "匹配“多智能体投资决策”，摘要包含可复核研究信号：benchmark。仅完成元数据与主题筛选，尚未核验实验结论。",
         "question": "核对数据时点、强基线、消融与样本外设置；检查代码/数据是否可获得，再判断结论是否支持你的研究。",
         "selectionLabel": "规则筛选 · 非质量背书",
         "nodeId": "FND-RUNTIME",
-        "selectionScore": 9.9111,
+        "selectionScore": 8.9333,
         "theme": "multi-agent-investing"
       },
       {
-        "id": "2611.20423",
-        "title": "FinVerify: A Verification Framework for Financial Agents",
-        "url": "https://arxiv.org/abs/2611.20423",
-        "publishedAt": "2026-11-16T02:37:53Z",
-        "updatedAt": "2026-11-16T02:37:53Z",
+        "id": "2611.24133",
+        "title": "Evaluating LIM Trading Agents: A Critical Review of Backtesting Validity and Reporting Practices",
+        "url": "https://arxiv.org/abs/2611.24133",
+        "publishedAt": "2026-11-18T09:47:00Z",
+        "updatedAt": "2026-11-19T15:10:15Z",
         "categories": [
-          "cs.AI"
+          "cs.CR"
         ],
         "type": "arXiv 预印本",
-        "why": "匹配“金融推理与能力评测”，摘要包含可复核研究信号：benchmark, evaluat, dataset。仅完成元数据与主题筛选，尚未核验实验结论。",
+        "why": "匹配“多智能体投资决策”，摘要包含可复核研究信号：evaluat, backtest, experiment。仅完成元数据与主题筛选，尚未核验实验结论。",
         "question": "核对数据时点、强基线、消融与样本外设置；检查代码/数据是否可获得，再判断结论是否支持你的研究。",
         "selectionLabel": "规则筛选 · 非质量背书",
-        "nodeId": "FN-EVAL",
-        "selectionScore": 7.9333,
-        "theme": "financial-evaluation"
+        "nodeId": "FND-RUNTIME",
+        "selectionScore": 8.0,
+        "theme": "multi-agent-investing"
       }
     ],
     "coverage": {
       "recordsFetched": 100,
-      "eligibleRecords": 8,
+      "eligibleRecords": 6,
       "query": "(all:financial OR all:finance OR all:trading OR all:portfolio) AND (all:\"large language model\" OR all:LLM OR all:agentic)",
       "maxResults": 100,
       "updatedWithinDays": 90,
@@ -395,7 +396,7 @@
   "status": {
     "daily": {
       "state": "ok",
-      "attemptedAt": "2026-11-19T14:46:44Z",
+      "attemptedAt": "2026-11-20T14:27:47Z",
       "message": "arXiv metadata refreshed"
     },
     "weekly": {
