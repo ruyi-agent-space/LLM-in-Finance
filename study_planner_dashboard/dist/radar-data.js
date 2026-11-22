@@ -147,7 +147,7 @@ window.FINANCE_RADAR = {
     }
   },
   "daily": {
-    "selectedAt": "2026-11-21T13:47:00Z",
+    "selectedAt": "2026-11-22T13:41:11Z",
     "methodology": "公开 arXiv 查询最近更新的至多100篇候选；仅保留近90日更新、金融主题须在标题出现，或在q-fin分类摘要出现至少2种金融关键词；语言模型须在标题出现或摘要提及至少2次，并含评测/实证/代码等摘要信号的文献。排序=标题主题匹配（0–6）+验证关键词（0–4）+90日新近度（0–2）；同一方向最多2篇。规则分数不是质量、引用量或投资价值，原文结论未自动验证。",
     "items": [
       {
@@ -167,7 +167,7 @@ window.FINANCE_RADAR = {
         "question": "核对数据时点、强基线、消融与样本外设置；检查代码/数据是否可获得，再判断结论是否支持你的研究。",
         "selectionLabel": "规则筛选 · 非质量背书",
         "nodeId": "FND-RAG",
-        "selectionScore": 8.9556,
+        "selectionScore": 8.9333,
         "theme": "document-rag"
       },
       {
@@ -185,7 +185,7 @@ window.FINANCE_RADAR = {
         "question": "核对数据时点、强基线、消融与样本外设置；检查代码/数据是否可获得，再判断结论是否支持你的研究。",
         "selectionLabel": "规则筛选 · 非质量背书",
         "nodeId": "FND-RUNTIME",
-        "selectionScore": 8.9111,
+        "selectionScore": 8.8889,
         "theme": "multi-agent-investing"
       },
       {
@@ -202,7 +202,7 @@ window.FINANCE_RADAR = {
         "question": "核对数据时点、强基线、消融与样本外设置；检查代码/数据是否可获得，再判断结论是否支持你的研究。",
         "selectionLabel": "规则筛选 · 非质量背书",
         "nodeId": "FND-RUNTIME",
-        "selectionScore": 7.9778,
+        "selectionScore": 7.9556,
         "theme": "multi-agent-investing"
       }
     ],
@@ -396,7 +396,7 @@ window.FINANCE_RADAR = {
   "status": {
     "daily": {
       "state": "ok",
-      "attemptedAt": "2026-11-21T13:47:00Z",
+      "attemptedAt": "2026-11-22T13:41:11Z",
       "message": "arXiv metadata refreshed"
     },
     "weekly": {
