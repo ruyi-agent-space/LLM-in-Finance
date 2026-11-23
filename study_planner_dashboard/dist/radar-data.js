@@ -1,10 +1,45 @@
 window.FINANCE_RADAR = {
   "schemaVersion": 1,
   "weekly": {
-    "updatedAt": "2026-11-17T14:59:49Z",
+    "updatedAt": "2026-11-23T16:38:32Z",
     "windowDays": 7,
     "methodology": "5个预设精选方向，按近7日 arXiv 检索样本相关新论文数→可比7日Stars增量→累计Stars排序。论文样本上限100篇，主题按公开关键词匹配，方向可交叉；不是全领域总量或客观前五。Stars增量须有6–9天前的实测基线，首次无基线显示“待积累”。累计Stars仅作社区关注度补充，不表示论文质量或投资表现。",
     "items": [
+      {
+        "id": "financial-evaluation",
+        "title": "金融推理与能力评测",
+        "category": "Financial Reasoning and Evaluation",
+        "summary": "建立跨任务、可复现的金融评测，区分事实记忆、数值推理与真实业务能力。",
+        "repo": "The-FinAI/PIXIU",
+        "repoUrl": "https://github.com/The-FinAI/PIXIU",
+        "stars": 895,
+        "nodeId": "FN-EVAL",
+        "keywords": [
+          "benchmark",
+          "evaluation",
+          "reasoning"
+        ],
+        "paperCount": 5,
+        "starDelta": -1,
+        "recentPapers": [
+          {
+            "title": "Auditable Financial Knowledge Graphs: Schema-Driven Construction and Intrinsic Quality Evaluation",
+            "url": "https://arxiv.org/abs/2611.27835",
+            "publishedAt": "2026-11-20T16:54:47Z"
+          },
+          {
+            "title": "Evaluating LIM Trading Agents: A Critical Review of Backtesting Validity and Reporting Practices",
+            "url": "https://arxiv.org/abs/2611.24133",
+            "publishedAt": "2026-11-18T09:47:00Z"
+          },
+          {
+            "title": "FinVeriQA: Financial Research Agents for Question Answering: Routing, Retrieval, MCP Tool Use, and Provenance-Aware Evidence Verification",
+            "url": "https://arxiv.org/abs/2611.25071",
+            "publishedAt": "2026-11-18T19:13:45Z"
+          }
+        ],
+        "baselineAt": "2026-11-17T14:59:49Z"
+      },
       {
         "id": "multi-agent-investing",
         "title": "多智能体投资决策",
@@ -12,7 +47,7 @@ window.FINANCE_RADAR = {
         "summary": "让分析、辩论与风控角色协作生成投资决策，研究重点是协作是否带来可验证的增益。",
         "repo": "TauricResearch/TradingAgents",
         "repoUrl": "https://github.com/TauricResearch/TradingAgents",
-        "stars": 122929,
+        "stars": 123575,
         "nodeId": "FND-RUNTIME",
         "keywords": [
           "multi-agent",
@@ -21,101 +56,25 @@ window.FINANCE_RADAR = {
           "investment decision"
         ],
         "paperCount": 3,
-        "starDelta": 1026,
+        "starDelta": 646,
         "recentPapers": [
           {
-            "title": "LLM Trading Agents Earn Beta, Not Alpha: A Look-Ahead-Free Benchmark",
-            "url": "https://arxiv.org/abs/2611.19530",
-            "publishedAt": "2026-11-14T17:57:11Z"
+            "title": "Evaluating LIM Trading Agents: A Critical Review of Backtesting Validity and Reporting Practices",
+            "url": "https://arxiv.org/abs/2611.24133",
+            "publishedAt": "2026-11-18T09:47:00Z"
           },
           {
-            "title": "Short Windows, Unmodelled Costs, Unknown Cutoffs: A Pre-Registered Evidence Audit of 91 LLM Trading Papers",
-            "url": "https://arxiv.org/abs/2611.18934",
-            "publishedAt": "2026-11-13T20:37:42Z"
+            "title": "FinVeriQA: Financial Research Agents for Question Answering: Routing, Retrieval, MCP Tool Use, and Provenance-Aware Evidence Verification",
+            "url": "https://arxiv.org/abs/2611.25071",
+            "publishedAt": "2026-11-18T19:13:45Z"
           },
           {
-            "title": "TradeGauntlet: Evaluating Compliance Controls for Autonomous Trading Agents",
-            "url": "https://arxiv.org/abs/2611.18493",
-            "publishedAt": "2026-11-13T18:05:23Z"
+            "title": "The Only Edge Was Memorized in Training: LLM Trading Agents Around Earnings and Bad News",
+            "url": "https://arxiv.org/abs/2611.22177",
+            "publishedAt": "2026-11-17T04:13:18Z"
           }
         ],
-        "baselineAt": "2026-11-11T03:46:12Z"
-      },
-      {
-        "id": "financial-evaluation",
-        "title": "金融推理与能力评测",
-        "category": "Financial Reasoning and Evaluation",
-        "summary": "建立跨任务、可复现的金融评测，区分事实记忆、数值推理与真实业务能力。",
-        "repo": "The-FinAI/PIXIU",
-        "repoUrl": "https://github.com/The-FinAI/PIXIU",
-        "stars": 896,
-        "nodeId": "FN-EVAL",
-        "keywords": [
-          "benchmark",
-          "evaluation",
-          "reasoning"
-        ],
-        "paperCount": 3,
-        "starDelta": 0,
-        "recentPapers": [
-          {
-            "title": "FinVerify: A Verification Framework for Financial Agents",
-            "url": "https://arxiv.org/abs/2611.20423",
-            "publishedAt": "2026-11-16T02:37:53Z"
-          },
-          {
-            "title": "LLM Trading Agents Earn Beta, Not Alpha: A Look-Ahead-Free Benchmark",
-            "url": "https://arxiv.org/abs/2611.19530",
-            "publishedAt": "2026-11-14T17:57:11Z"
-          },
-          {
-            "title": "JFinBench: A Continuously Refreshable Japanese Financial Benchmark from the Latest Certification Exams",
-            "url": "https://arxiv.org/abs/2611.18130",
-            "publishedAt": "2026-11-13T12:59:12Z"
-          }
-        ],
-        "baselineAt": "2026-11-11T03:46:12Z"
-      },
-      {
-        "id": "analyst-copilots",
-        "title": "投研工作流与分析师 Copilot",
-        "category": "Financial Research Workflow Automation",
-        "summary": "把资料检索、确定性估值计算、分析和报告串成可追溯的研究流程。",
-        "repo": "AI4Finance-Foundation/FinRobot",
-        "repoUrl": "https://github.com/AI4Finance-Foundation/FinRobot",
-        "stars": 8445,
-        "nodeId": "FN-DILIGENCE",
-        "keywords": [
-          "financial analys",
-          "financial research",
-          "valuation",
-          "report generation",
-          "copilot"
-        ],
-        "paperCount": 0,
-        "starDelta": 38,
-        "recentPapers": [],
-        "baselineAt": "2026-11-11T03:46:12Z"
-      },
-      {
-        "id": "domain-adaptation",
-        "title": "金融领域适配与微调",
-        "category": "Financial Domain Adaptation",
-        "summary": "用金融数据、指令微调与参数高效训练，让通用模型掌握领域术语和任务。",
-        "repo": "AI4Finance-Foundation/FinGPT",
-        "repoUrl": "https://github.com/AI4Finance-Foundation/FinGPT",
-        "stars": 21585,
-        "nodeId": "FN-RL-SFT",
-        "keywords": [
-          "fine-tun",
-          "finetun",
-          "domain adapt",
-          "financial language model"
-        ],
-        "paperCount": 0,
-        "starDelta": 37,
-        "recentPapers": [],
-        "baselineAt": "2026-11-11T03:46:12Z"
+        "baselineAt": "2026-11-17T14:59:49Z"
       },
       {
         "id": "document-rag",
@@ -124,7 +83,7 @@ window.FINANCE_RADAR = {
         "summary": "在长财报、表格和跨来源数据中检索证据，生成能核验来源与口径的回答。",
         "repo": "patronus-ai/financebench",
         "repoUrl": "https://github.com/patronus-ai/financebench",
-        "stars": 391,
+        "stars": 394,
         "nodeId": "FND-RAG",
         "keywords": [
           "retrieval",
@@ -133,13 +92,76 @@ window.FINANCE_RADAR = {
           "financial document",
           "financial report"
         ],
+        "paperCount": 3,
+        "starDelta": 3,
+        "recentPapers": [
+          {
+            "title": "Auditable Financial Knowledge Graphs: Schema-Driven Construction and Intrinsic Quality Evaluation",
+            "url": "https://arxiv.org/abs/2611.27835",
+            "publishedAt": "2026-11-20T16:54:47Z"
+          },
+          {
+            "title": "Right Numbers, Wrong Story: When LLMs Narrate Financial Changes Beyond Their Inputs",
+            "url": "https://arxiv.org/abs/2611.26968",
+            "publishedAt": "2026-11-20T01:44:00Z"
+          },
+          {
+            "title": "FinVeriQA: Financial Research Agents for Question Answering: Routing, Retrieval, MCP Tool Use, and Provenance-Aware Evidence Verification",
+            "url": "https://arxiv.org/abs/2611.25071",
+            "publishedAt": "2026-11-18T19:13:45Z"
+          }
+        ],
+        "baselineAt": "2026-11-17T14:59:49Z"
+      },
+      {
+        "id": "analyst-copilots",
+        "title": "投研工作流与分析师 Copilot",
+        "category": "Financial Research Workflow Automation",
+        "summary": "把资料检索、确定性估值计算、分析和报告串成可追溯的研究流程。",
+        "repo": "AI4Finance-Foundation/FinRobot",
+        "repoUrl": "https://github.com/AI4Finance-Foundation/FinRobot",
+        "stars": 8470,
+        "nodeId": "FN-DILIGENCE",
+        "keywords": [
+          "financial analys",
+          "financial research",
+          "valuation",
+          "report generation",
+          "copilot"
+        ],
+        "paperCount": 1,
+        "starDelta": 25,
+        "recentPapers": [
+          {
+            "title": "FinVeriQA: Financial Research Agents for Question Answering: Routing, Retrieval, MCP Tool Use, and Provenance-Aware Evidence Verification",
+            "url": "https://arxiv.org/abs/2611.25071",
+            "publishedAt": "2026-11-18T19:13:45Z"
+          }
+        ],
+        "baselineAt": "2026-11-17T14:59:49Z"
+      },
+      {
+        "id": "domain-adaptation",
+        "title": "金融领域适配与微调",
+        "category": "Financial Domain Adaptation",
+        "summary": "用金融数据、指令微调与参数高效训练，让通用模型掌握领域术语和任务。",
+        "repo": "AI4Finance-Foundation/FinGPT",
+        "repoUrl": "https://github.com/AI4Finance-Foundation/FinGPT",
+        "stars": 21692,
+        "nodeId": "FN-RL-SFT",
+        "keywords": [
+          "fine-tun",
+          "finetun",
+          "domain adapt",
+          "financial language model"
+        ],
         "paperCount": 0,
-        "starDelta": 2,
+        "starDelta": 107,
         "recentPapers": [],
-        "baselineAt": "2026-11-11T03:46:12Z"
+        "baselineAt": "2026-11-17T14:59:49Z"
       }
     ],
-    "windowStart": "2026-11-10T14:59:49Z",
+    "windowStart": "2026-11-16T16:38:32Z",
     "coverage": {
       "recordsFetched": 100,
       "query": "(all:financial OR all:finance OR all:trading OR all:portfolio) AND (all:\"large language model\" OR all:LLM OR all:agentic)",
@@ -147,7 +169,7 @@ window.FINANCE_RADAR = {
     }
   },
   "daily": {
-    "selectedAt": "2026-11-22T13:41:11Z",
+    "selectedAt": "2026-11-23T16:38:32Z",
     "methodology": "公开 arXiv 查询最近更新的至多100篇候选；仅保留近90日更新、金融主题须在标题出现，或在q-fin分类摘要出现至少2种金融关键词；语言模型须在标题出现或摘要提及至少2次，并含评测/实证/代码等摘要信号的文献。排序=标题主题匹配（0–6）+验证关键词（0–4）+90日新近度（0–2）；同一方向最多2篇。规则分数不是质量、引用量或投资价值，原文结论未自动验证。",
     "items": [
       {
@@ -167,7 +189,7 @@ window.FINANCE_RADAR = {
         "question": "核对数据时点、强基线、消融与样本外设置；检查代码/数据是否可获得，再判断结论是否支持你的研究。",
         "selectionLabel": "规则筛选 · 非质量背书",
         "nodeId": "FND-RAG",
-        "selectionScore": 8.9333,
+        "selectionScore": 8.9111,
         "theme": "document-rag"
       },
       {
@@ -185,7 +207,7 @@ window.FINANCE_RADAR = {
         "question": "核对数据时点、强基线、消融与样本外设置；检查代码/数据是否可获得，再判断结论是否支持你的研究。",
         "selectionLabel": "规则筛选 · 非质量背书",
         "nodeId": "FND-RUNTIME",
-        "selectionScore": 8.8889,
+        "selectionScore": 8.8667,
         "theme": "multi-agent-investing"
       },
       {
@@ -202,13 +224,13 @@ window.FINANCE_RADAR = {
         "question": "核对数据时点、强基线、消融与样本外设置；检查代码/数据是否可获得，再判断结论是否支持你的研究。",
         "selectionLabel": "规则筛选 · 非质量背书",
         "nodeId": "FND-RUNTIME",
-        "selectionScore": 7.9556,
+        "selectionScore": 7.9111,
         "theme": "multi-agent-investing"
       }
     ],
     "coverage": {
       "recordsFetched": 100,
-      "eligibleRecords": 6,
+      "eligibleRecords": 7,
       "query": "(all:financial OR all:finance OR all:trading OR all:portfolio) AND (all:\"large language model\" OR all:LLM OR all:agentic)",
       "maxResults": 100,
       "updatedWithinDays": 90,
@@ -396,12 +418,12 @@ window.FINANCE_RADAR = {
   "status": {
     "daily": {
       "state": "ok",
-      "attemptedAt": "2026-11-22T13:41:11Z",
+      "attemptedAt": "2026-11-23T16:38:32Z",
       "message": "arXiv metadata refreshed"
     },
     "weekly": {
       "state": "ok",
-      "attemptedAt": "2026-11-17T14:59:49Z",
+      "attemptedAt": "2026-11-23T16:38:32Z",
       "message": "Weekly paper sample and project attention refreshed"
     }
   },
@@ -544,6 +566,16 @@ window.FINANCE_RADAR = {
         "AI4Finance-Foundation/FinRobot": 8445,
         "AI4Finance-Foundation/FinGPT": 21585,
         "patronus-ai/financebench": 391
+      }
+    },
+    {
+      "at": "2026-11-23T16:38:32Z",
+      "stars": {
+        "The-FinAI/PIXIU": 895,
+        "TauricResearch/TradingAgents": 123575,
+        "patronus-ai/financebench": 394,
+        "AI4Finance-Foundation/FinRobot": 8470,
+        "AI4Finance-Foundation/FinGPT": 21692
       }
     }
   ]
