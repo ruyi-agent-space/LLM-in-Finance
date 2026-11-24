@@ -169,46 +169,42 @@ window.FINANCE_RADAR = {
     }
   },
   "daily": {
-    "selectedAt": "2026-11-23T16:38:32Z",
+    "selectedAt": "2026-11-24T16:34:26Z",
     "methodology": "公开 arXiv 查询最近更新的至多100篇候选；仅保留近90日更新、金融主题须在标题出现，或在q-fin分类摘要出现至少2种金融关键词；语言模型须在标题出现或摘要提及至少2次，并含评测/实证/代码等摘要信号的文献。排序=标题主题匹配（0–6）+验证关键词（0–4）+90日新近度（0–2）；同一方向最多2篇。规则分数不是质量、引用量或投资价值，原文结论未自动验证。",
     "items": [
       {
-        "id": "2611.25071",
-        "title": "FinVeriQA: Financial Research Agents for Question Answering: Routing, Retrieval, MCP Tool Use, and Provenance-Aware Evidence Verification",
-        "url": "https://arxiv.org/abs/2611.25071",
-        "publishedAt": "2026-11-18T19:13:45Z",
-        "updatedAt": "2026-11-18T19:13:45Z",
+        "id": "2611.29716",
+        "title": "Fin-RSI: A Unified Library of Financial Skills, Checks, and Self-Improvement for LLM Agents",
+        "url": "https://arxiv.org/abs/2611.29716",
+        "publishedAt": "2026-11-22T19:28:28Z",
+        "updatedAt": "2026-11-22T19:28:28Z",
         "categories": [
-          "cs.CL",
-          "cs.AI",
-          "cs.IR",
-          "cs.MA"
+          "cs.AI"
         ],
         "type": "arXiv 预印本",
-        "why": "匹配“财报问答与可溯源 RAG”，摘要包含可复核研究信号：benchmark, experiment, open-source。仅完成元数据与主题筛选，尚未核验实验结论。",
+        "why": "匹配“金融推理与能力评测”，摘要包含可复核研究信号：benchmark。仅完成元数据与主题筛选，尚未核验实验结论。",
         "question": "核对数据时点、强基线、消融与样本外设置；检查代码/数据是否可获得，再判断结论是否支持你的研究。",
         "selectionLabel": "规则筛选 · 非质量背书",
-        "nodeId": "FND-RAG",
-        "selectionScore": 8.9111,
-        "theme": "document-rag"
+        "nodeId": "FN-EVAL",
+        "selectionScore": 8.9778,
+        "theme": "financial-evaluation"
       },
       {
-        "id": "2611.22177",
-        "title": "The Only Edge Was Memorized in Training: LLM Trading Agents Around Earnings and Bad News",
-        "url": "https://arxiv.org/abs/2611.22177",
-        "publishedAt": "2026-11-17T04:13:18Z",
-        "updatedAt": "2026-11-17T04:13:18Z",
+        "id": "2611.28239",
+        "title": "FinEvo: Recursive Self-Improvement for Long-Horizon Financial Modeling",
+        "url": "https://arxiv.org/abs/2611.28239",
+        "publishedAt": "2026-11-20T19:14:42Z",
+        "updatedAt": "2026-11-20T19:14:42Z",
         "categories": [
-          "cs.AI",
-          "cs.MA"
+          "cs.AI"
         ],
         "type": "arXiv 预印本",
-        "why": "匹配“多智能体投资决策”，摘要包含可复核研究信号：benchmark。仅完成元数据与主题筛选，尚未核验实验结论。",
+        "why": "匹配“金融推理与能力评测”，摘要包含可复核研究信号：evaluat, empirical, code。仅完成元数据与主题筛选，尚未核验实验结论。",
         "question": "核对数据时点、强基线、消融与样本外设置；检查代码/数据是否可获得，再判断结论是否支持你的研究。",
         "selectionLabel": "规则筛选 · 非质量背书",
-        "nodeId": "FND-RUNTIME",
-        "selectionScore": 8.8667,
-        "theme": "multi-agent-investing"
+        "nodeId": "FN-EVAL",
+        "selectionScore": 7.9333,
+        "theme": "financial-evaluation"
       },
       {
         "id": "2611.24133",
@@ -224,13 +220,13 @@ window.FINANCE_RADAR = {
         "question": "核对数据时点、强基线、消融与样本外设置；检查代码/数据是否可获得，再判断结论是否支持你的研究。",
         "selectionLabel": "规则筛选 · 非质量背书",
         "nodeId": "FND-RUNTIME",
-        "selectionScore": 7.9111,
+        "selectionScore": 7.8889,
         "theme": "multi-agent-investing"
       }
     ],
     "coverage": {
       "recordsFetched": 100,
-      "eligibleRecords": 7,
+      "eligibleRecords": 6,
       "query": "(all:financial OR all:finance OR all:trading OR all:portfolio) AND (all:\"large language model\" OR all:LLM OR all:agentic)",
       "maxResults": 100,
       "updatedWithinDays": 90,
@@ -418,7 +414,7 @@ window.FINANCE_RADAR = {
   "status": {
     "daily": {
       "state": "ok",
-      "attemptedAt": "2026-11-23T16:38:32Z",
+      "attemptedAt": "2026-11-24T16:34:26Z",
       "message": "arXiv metadata refreshed"
     },
     "weekly": {
