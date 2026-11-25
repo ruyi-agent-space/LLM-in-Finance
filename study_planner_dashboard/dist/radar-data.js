@@ -169,9 +169,27 @@ window.FINANCE_RADAR = {
     }
   },
   "daily": {
-    "selectedAt": "2026-11-24T16:34:26Z",
+    "selectedAt": "2026-11-25T16:17:33Z",
     "methodology": "公开 arXiv 查询最近更新的至多100篇候选；仅保留近90日更新、金融主题须在标题出现，或在q-fin分类摘要出现至少2种金融关键词；语言模型须在标题出现或摘要提及至少2次，并含评测/实证/代码等摘要信号的文献。排序=标题主题匹配（0–6）+验证关键词（0–4）+90日新近度（0–2）；同一方向最多2篇。规则分数不是质量、引用量或投资价值，原文结论未自动验证。",
     "items": [
+      {
+        "id": "2611.32389",
+        "title": "AgentBank: Banking on Blockchain Agentic Payments",
+        "url": "https://arxiv.org/abs/2611.32389",
+        "publishedAt": "2026-11-24T10:53:33Z",
+        "updatedAt": "2026-11-24T10:53:33Z",
+        "categories": [
+          "cs.CR",
+          "q-fin.GN"
+        ],
+        "type": "arXiv 预印本",
+        "why": "匹配“金融推理与能力评测”，摘要包含可复核研究信号：evaluat, experiment。仅完成元数据与主题筛选，尚未核验实验结论。",
+        "question": "核对数据时点、强基线、消融与样本外设置；检查代码/数据是否可获得，再判断结论是否支持你的研究。",
+        "selectionLabel": "规则筛选 · 非质量背书",
+        "nodeId": "FN-EVAL",
+        "selectionScore": 9.9778,
+        "theme": "financial-evaluation"
+      },
       {
         "id": "2611.29716",
         "title": "Fin-RSI: A Unified Library of Financial Skills, Checks, and Self-Improvement for LLM Agents",
@@ -186,42 +204,26 @@ window.FINANCE_RADAR = {
         "question": "核对数据时点、强基线、消融与样本外设置；检查代码/数据是否可获得，再判断结论是否支持你的研究。",
         "selectionLabel": "规则筛选 · 非质量背书",
         "nodeId": "FN-EVAL",
-        "selectionScore": 8.9778,
+        "selectionScore": 8.9556,
         "theme": "financial-evaluation"
       },
       {
-        "id": "2611.28239",
-        "title": "FinEvo: Recursive Self-Improvement for Long-Horizon Financial Modeling",
-        "url": "https://arxiv.org/abs/2611.28239",
-        "publishedAt": "2026-11-20T19:14:42Z",
-        "updatedAt": "2026-11-20T19:14:42Z",
+        "id": "2611.28881",
+        "title": "FormaFin: Verifiable Financial Analysis with Solver-Guided Reinforcement Learning",
+        "url": "https://arxiv.org/abs/2611.28881",
+        "publishedAt": "2026-11-21T15:56:56Z",
+        "updatedAt": "2026-11-21T15:56:56Z",
         "categories": [
-          "cs.AI"
+          "cs.AI",
+          "cs.LG"
         ],
         "type": "arXiv 预印本",
-        "why": "匹配“金融推理与能力评测”，摘要包含可复核研究信号：evaluat, empirical, code。仅完成元数据与主题筛选，尚未核验实验结论。",
+        "why": "匹配“投研工作流与分析师 Copilot”，摘要包含可复核研究信号：benchmark, evaluat。仅完成元数据与主题筛选，尚未核验实验结论。",
         "question": "核对数据时点、强基线、消融与样本外设置；检查代码/数据是否可获得，再判断结论是否支持你的研究。",
         "selectionLabel": "规则筛选 · 非质量背书",
-        "nodeId": "FN-EVAL",
-        "selectionScore": 7.9333,
-        "theme": "financial-evaluation"
-      },
-      {
-        "id": "2611.24133",
-        "title": "Evaluating LIM Trading Agents: A Critical Review of Backtesting Validity and Reporting Practices",
-        "url": "https://arxiv.org/abs/2611.24133",
-        "publishedAt": "2026-11-18T09:47:00Z",
-        "updatedAt": "2026-11-19T15:10:15Z",
-        "categories": [
-          "cs.CR"
-        ],
-        "type": "arXiv 预印本",
-        "why": "匹配“多智能体投资决策”，摘要包含可复核研究信号：evaluat, backtest, experiment。仅完成元数据与主题筛选，尚未核验实验结论。",
-        "question": "核对数据时点、强基线、消融与样本外设置；检查代码/数据是否可获得，再判断结论是否支持你的研究。",
-        "selectionLabel": "规则筛选 · 非质量背书",
-        "nodeId": "FND-RUNTIME",
-        "selectionScore": 7.8889,
-        "theme": "multi-agent-investing"
+        "nodeId": "FN-DILIGENCE",
+        "selectionScore": 6.9111,
+        "theme": "analyst-copilots"
       }
     ],
     "coverage": {
@@ -414,7 +416,7 @@ window.FINANCE_RADAR = {
   "status": {
     "daily": {
       "state": "ok",
-      "attemptedAt": "2026-11-24T16:34:26Z",
+      "attemptedAt": "2026-11-25T16:17:33Z",
       "message": "arXiv metadata refreshed"
     },
     "weekly": {
