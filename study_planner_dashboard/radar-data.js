@@ -169,7 +169,7 @@ window.FINANCE_RADAR = {
     }
   },
   "daily": {
-    "selectedAt": "2026-11-25T16:17:33Z",
+    "selectedAt": "2026-11-26T15:53:24Z",
     "methodology": "公开 arXiv 查询最近更新的至多100篇候选；仅保留近90日更新、金融主题须在标题出现，或在q-fin分类摘要出现至少2种金融关键词；语言模型须在标题出现或摘要提及至少2次，并含评测/实证/代码等摘要信号的文献。排序=标题主题匹配（0–6）+验证关键词（0–4）+90日新近度（0–2）；同一方向最多2篇。规则分数不是质量、引用量或投资价值，原文结论未自动验证。",
     "items": [
       {
@@ -187,16 +187,17 @@ window.FINANCE_RADAR = {
         "question": "核对数据时点、强基线、消融与样本外设置；检查代码/数据是否可获得，再判断结论是否支持你的研究。",
         "selectionLabel": "规则筛选 · 非质量背书",
         "nodeId": "FN-EVAL",
-        "selectionScore": 9.9778,
+        "selectionScore": 9.9556,
         "theme": "financial-evaluation"
       },
       {
-        "id": "2611.29716",
-        "title": "Fin-RSI: A Unified Library of Financial Skills, Checks, and Self-Improvement for LLM Agents",
-        "url": "https://arxiv.org/abs/2611.29716",
-        "publishedAt": "2026-11-22T19:28:28Z",
-        "updatedAt": "2026-11-22T19:28:28Z",
+        "id": "2603.22305",
+        "title": "Benchmarking LLM-Based Investment Advisor Agents for Asset Allocation in the Chinese ETF Market: Overview of NLPCC 2026 Shared Task 4",
+        "url": "https://arxiv.org/abs/2603.22305",
+        "publishedAt": "2026-03-18T02:31:28Z",
+        "updatedAt": "2026-11-25T08:50:19Z",
         "categories": [
+          "cs.LG",
           "cs.AI"
         ],
         "type": "arXiv 预印本",
@@ -204,7 +205,7 @@ window.FINANCE_RADAR = {
         "question": "核对数据时点、强基线、消融与样本外设置；检查代码/数据是否可获得，再判断结论是否支持你的研究。",
         "selectionLabel": "规则筛选 · 非质量背书",
         "nodeId": "FN-EVAL",
-        "selectionScore": 8.9556,
+        "selectionScore": 8.9778,
         "theme": "financial-evaluation"
       },
       {
@@ -228,7 +229,7 @@ window.FINANCE_RADAR = {
     ],
     "coverage": {
       "recordsFetched": 100,
-      "eligibleRecords": 6,
+      "eligibleRecords": 7,
       "query": "(all:financial OR all:finance OR all:trading OR all:portfolio) AND (all:\"large language model\" OR all:LLM OR all:agentic)",
       "maxResults": 100,
       "updatedWithinDays": 90,
@@ -416,7 +417,7 @@ window.FINANCE_RADAR = {
   "status": {
     "daily": {
       "state": "ok",
-      "attemptedAt": "2026-11-25T16:17:33Z",
+      "attemptedAt": "2026-11-26T15:53:24Z",
       "message": "arXiv metadata refreshed"
     },
     "weekly": {
